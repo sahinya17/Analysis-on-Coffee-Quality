@@ -25,6 +25,10 @@ coffee_data <- read_csv(here::here("Data/coffee_ratings.csv"))
 
 # Section 2 - Q3 & 4
 
+Q3. Which company in each country produces the highest rated coffee?
+
+Q4. In which categories robusta or arabica variety has higher grades?
+
 # Section 3 - Q5 & 6
 
 #Conclusion

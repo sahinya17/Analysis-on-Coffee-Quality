@@ -14,6 +14,12 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
+```{r}
+library(tidyverse)
+library(readr)
+library(kableExtra)
+```
+
 ```{r reading-data}
 # Get the Data
 coffee_data <- read_csv(here::here("Data/coffee_ratings.csv"))
@@ -27,7 +33,29 @@ coffee_data <- read_csv(here::here("Data/coffee_ratings.csv"))
 
 Q3. Which company in each country produces the highest rated coffee?
 
+
+
+
 Q4. In which categories robusta or arabica variety has higher grades?
+
+```{r}
+species_grades <- coffee_data %>% 
+  select(total_cup_points,species,aroma,flavor,aftertaste,acidity,sweetness) %>% 
+  filter(total_cup_points != 0)
+```
+
+
+
+```{r}
+species_grades %>% 
+  pivot_longer(-species, names_to = "measure", values_to = "grades") %>% 
+  mutate(species = as.factor(species),
+         measure = as.factor(measure)) %>% 
+  ggplot(aes(x = species, y = grades, color=species)) +
+  geom_boxplot()+
+  facet_wrap(~measure, scales = "free_y")
+
+```
 
 # Section 3 - Q5 & 6
 

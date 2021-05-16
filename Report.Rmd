@@ -18,6 +18,7 @@ knitr::opts_chunk$set(echo = FALSE)
 library(tidyverse)
 library(readr)
 library(kableExtra)
+library(maps)
 ```
 
 ```{r reading-data}
@@ -31,10 +32,51 @@ coffee_data <- read_csv(here::here("Data/coffee_ratings.csv"))
 
 # Section 2 - Q3 & 4
 
-Q3. Which company in each country produces the highest rated coffee?
+Q3. Which top3 countries cultivated most Arabica coffee beans and Robusta coffee Beans respectively?
 
+```{r}
+species_country <- coffee_data %>% 
+  select(country_of_origin, species)
+```
 
+```{r}
+# make a table
+species_country_count <- species_country %>% 
+  group_by(country_of_origin, species) %>% 
+  summarise(n=n()) %>% 
+  arrange(-n) %>%
+  ungroup() %>% 
+  group_by(species) %>% 
+  slice(1:3)
+```
 
+```{r}
+# world map
+world_map <- map_data("world")
+
+# top3 country geo data of two species
+top3country <- map_data("world", region = species_country_count$country_of_origin)
+
+# combine top3 country geo data of two species with count data
+top3country_geo_count <- top3country %>% 
+  left_join(species_country_count, by = c("region"="country_of_origin"))
+```
+
+```{r}
+# make a map
+ggplot(world_map, aes(x = long, y = lat, group = group)) +
+  geom_polygon(fill="white", colour = "gray50") +
+  geom_polygon(data =top3country_geo_count, aes(x=long, y = lat, group=group,fill=species))+
+  scale_x_continuous(breaks = seq(-180, 210, 45), labels = function(x){paste0(x, "°")}) +
+  scale_y_continuous(breaks = seq(-60, 100, 30), labels = function(x){paste0(x, "°")}) +
+  annotate("text", label = "Colombia", x = -74.2973, y = 4.5709, size = 3)+
+  annotate("text", label = "Mexico", x = -102.5528, y = 23.6345, size = 3)+
+  annotate("text", label = "Guatemala", x = -90.2308, y = 15.7835, size = 3)+
+  annotate("text", label = "India", x = 78.9629, y = 20.5937, size = 3)+
+  annotate("text", label = "Uganda", x = 32.2903, y = 1.3733, size = 3)+
+  annotate("text", label = "Ecuador", x = -78.1834, y = -1.8312, size = 3)+
+  theme_light()
+```
 
 Q4. In which categories robusta or arabica variety has higher grades?
 

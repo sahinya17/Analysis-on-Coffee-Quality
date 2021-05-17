@@ -32,7 +32,7 @@ coffee_data <- read_csv(here::here("Data/coffee_ratings.csv"))
 
 # Section 2 - Q3 & 4
 
-Q3. Which top3 countries cultivated most Arabica coffee beans and Robusta coffee Beans respectively?
+## Q3. Which top3 countries cultivated most kinds of Arabica coffee beans and Robusta coffee Beans respectively?
 
 ```{r}
 species_country <- coffee_data %>% 
@@ -40,7 +40,7 @@ species_country <- coffee_data %>%
 ```
 
 ```{r}
-# make a table
+# filter the top3 countries
 species_country_count <- species_country %>% 
   group_by(country_of_origin, species) %>% 
   summarise(n=n()) %>% 
@@ -49,6 +49,19 @@ species_country_count <- species_country %>%
   group_by(species) %>% 
   slice(1:3)
 ```
+
+The table shows that Mexico, Colombia and Guatemala cultivated the most kinds of Arabica coffee beans and India, Uganda and Ecuador cultivated the most kinds of Robusta coffee Beans. Also it could find that there are much more types of Arabica coffee beans compared to Robusta coffee Beans, which conforms to the content given by @bunn2015bitter.
+
+```{r}
+# make a table
+species_country_count %>% 
+  kable(caption = "The top3 countries which cultivated most kinds of Arabica coffee beans and Robusta coffee Beans respectively") %>% 
+  kable_styling()
+```
+
+Now, the map below shows the geographical location of this 6 countries. It could easily find that it seems to be an obvious coffee production zone, which is between the equator and 30 degrees north latitude. In these zones, the annual average temperature and rainfall are in line with the coffee bean growing conditions.
+
+Besides, it indicates that the countries that cultivated Arabica coffee beans are all located in Central and South America, while the countries that cultivated Robusta coffee beans are located in several continents like South America, Eastern Africa and India. It is related to the environment required for the growth of different coffee beans.
 
 ```{r}
 # world map
@@ -62,7 +75,7 @@ top3country_geo_count <- top3country %>%
   left_join(species_country_count, by = c("region"="country_of_origin"))
 ```
 
-```{r}
+```{r out.width = "100%", fig.width=10, fig.height=7, fig.cap= "The geographical location of the top3 countries which cultivated most kinds of Arabica coffee beans and Robusta coffee Beans respectively"}
 # make a map
 ggplot(world_map, aes(x = long, y = lat, group = group)) +
   geom_polygon(fill="white", colour = "gray50") +
@@ -78,7 +91,9 @@ ggplot(world_map, aes(x = long, y = lat, group = group)) +
   theme_light()
 ```
 
-Q4. In which categories robusta or arabica variety has higher grades?
+
+
+## Q4. In which categories robusta or arabica variety has higher grades?
 
 ```{r}
 species_grades <- coffee_data %>% 

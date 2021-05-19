@@ -42,7 +42,7 @@ species_country <- coffee_data %>%
   select(country_of_origin, species)
 ```
 
-```{r}
+```{r warning=FALSE, message=FALSE}
 # filter the top3 countries
 species_country_count <- species_country %>% 
   group_by(country_of_origin, species) %>% 
@@ -53,16 +53,16 @@ species_country_count <- species_country %>%
   slice(1:3)
 ```
 
-The table shows that Mexico, Colombia and Guatemala cultivated the most kinds of Arabica coffee beans and India, Uganda and Ecuador cultivated the most kinds of Robusta coffee Beans. Also it could find that there are much more types of Arabica coffee beans compared to Robusta coffee Beans, which conforms to the content given by @bunn2015bitter.
+The Table \@ref(tab:species) shows that Mexico, Colombia and Guatemala cultivated the most kinds of Arabica coffee beans and India, Uganda and Ecuador cultivated the most kinds of Robusta coffee Beans. Also it could find that there are much more types of Arabica coffee beans compared to Robusta coffee Beans, which conforms to the content given by @bunn2015bitter.
 
-```{r}
+```{r species}
 # make a table
 species_country_count %>% 
   kable(caption = "The top3 countries which cultivated most kinds of Arabica coffee beans and Robusta coffee Beans respectively") %>% 
   kable_styling()
 ```
 
-Now, the map below shows the geographical location of this 6 countries. It could easily find that it seems to be an obvious coffee production zone, which is between the equator and 30 degrees north latitude. In these zones, the annual average temperature and rainfall are in line with the coffee bean growing conditions.
+Now, the Figure \@ref(fig:speciescountry) shows the geographical location of this 6 countries. It could easily find that it seems to be an obvious coffee production zone, which is between the equator and 30 degrees north latitude. In these zones, the annual average temperature and rainfall are in line with the coffee bean growing conditions.
 
 Besides, it indicates that the countries that cultivated Arabica coffee beans are all located in Central and South America, while the countries that cultivated Robusta coffee beans are located in several continents like South America, Eastern Africa and India. It is related to the environment required for the growth of different coffee beans.
 
@@ -78,7 +78,7 @@ top3country_geo_count <- top3country %>%
   left_join(species_country_count, by = c("region"="country_of_origin"))
 ```
 
-```{r out.width = "100%", fig.width=10, fig.height=7, fig.cap= "The geographical location of the top3 countries which cultivated most kinds of Arabica coffee beans and Robusta coffee Beans respectively"}
+```{r speciescountry, out.width = "100%", fig.width=10, fig.height=7, fig.cap= "The geographical location of the top3 countries which cultivated most kinds of Arabica coffee beans and Robusta coffee Beans respectively"}
 # make a map
 ggplot(world_map, aes(x = long, y = lat, group = group)) +
   geom_polygon(fill="white", colour = "gray50") +

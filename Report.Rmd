@@ -94,7 +94,7 @@ ggplot(world_map, aes(x = long, y = lat, group = group)) +
   theme_light()
 ```
 
-
+## Q7. What is the difference of altitude of Arabica coffee beans and Robusta coffee Beans production areas?
 
 ## Q4. In which categories robusta or arabica variety has higher grades?
 

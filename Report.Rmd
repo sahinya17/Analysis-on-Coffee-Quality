@@ -112,6 +112,14 @@ ggplot(coffee_data %>% filter(total_cup_points > 50), aes(x = total_cup_points, 
 ```
 
 
+```{r ratingdist}
+ggplot(coffee_data %>% filter(total_cup_points > 50), aes(country_of_origin , total_cup_points, fill = country_of_origin )) +
+  geom_boxplot() +
+  coord_flip() +
+  theme(legend.position = "none") 
+```
+
+
 # Section 2 - Q3 & 4
 
 # Section 3 - Q5 & 6

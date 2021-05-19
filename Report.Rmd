@@ -96,6 +96,21 @@ caption = "Total Bags of Coffee sampled by Country"
 
 ## Which country produces the highest rated coffee?
 
+```{r rating}
+library(ggridges)
+
+ggplot(coffee_data %>% filter(total_cup_points > 50), aes(x = total_cup_points, y = country_of_origin, fill = stat(x))) +
+  geom_density_ridges_gradient(scale = 3, rel_min_height = 0.01, gradient_lwd = 1.) +
+  scale_x_continuous(expand = c(0, 0)) +
+  scale_y_discrete(expand = expand_scale(mult = c(0.01, 0.25))) +
+  scale_fill_viridis_c(name = "Temp. [F]", option = "C") +
+  labs(
+    title = 'Coffee Rating Distribution'
+  ) +
+  theme_ridges(font_size = 10, grid = TRUE) + 
+  theme(axis.title.y = element_blank())
+```
+
 
 # Section 2 - Q3 & 4
 

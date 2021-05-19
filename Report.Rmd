@@ -99,6 +99,10 @@ ggplot(world_map, aes(x = long, y = lat, group = group)) +
 
 ## Q7. What is the difference of altitude of Arabica coffee beans and Robusta coffee Beans production areas?
 
+Figure \@ref(fig:altitude) indicates that the mean altitude of Arabica coffee beans production areas is concentrated from 1000 to 1800 meters. Besides, people could surprisingly find that there exists two peaks about the mean altitude of Robusta coffee Beans production areas, and the ranges are concentrated from 500 to 1600 meters and 2800 to 3400 meters respectively. However, the probability of the second peak is much less than the first one.
+
+So it could say that the mean altitude of Arabica coffee beans production areas is higher than that of many Robusta coffee Beans production areas even though there are some exceptions. 
+
 ```{r altitude, fig.cap="The mean altitude of Arabica coffee beans and Robusta coffee Beans production areas"}
 coffee_data %>% 
   select(species, altitude_mean_meters) %>% 
@@ -106,15 +110,8 @@ coffee_data %>%
   filter(altitude_mean_meters<=5900) %>% 
   pivot_longer(-species, names_to = "altitude", values_to = "meter") %>% 
   ggplot(aes(x = meter, color = species)) +
-  geom_density()+
-  facet_wrap(~altitude)
+  geom_density()
 ```
-
-
-
-
-
-
 
 
 ## Q4. In which categories robusta or arabica variety has higher grades?

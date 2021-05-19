@@ -21,7 +21,11 @@ coffee_data <- read_csv(here::here("Data/coffee_ratings.csv"))
 
 # Introduction 
 
-# Section 1 - Q1 & 2
+# Section 1 - Q1 & 2 {-}
+
+## How many kilos of coffee from each country were sampled? 
+
+## Which country produces the highest rated coffee?
 
 # Section 2 - Q3 & 4
 

@@ -4,24 +4,25 @@ subtitle: ETC5513 Assignment 4, Master of Business Analytics
 author: Yiwen Liu, Panagiotis Stylianos, Sahinya Akila
 date: '`r Sys.Date()`'
 output: 
-  html_document:
+  bookdown::html_document2:
     css: monashreport.css
     includes:
       before_body: header.html
+bibliography: references.bib
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-```{r}
+```{r warning=FALSE, message=FALSE}
 library(tidyverse)
 library(readr)
 library(kableExtra)
 library(maps)
 ```
 
-```{r reading-data}
+```{r reading-data, warning=FALSE, message=FALSE}
 # Get the Data
 coffee_data <- read_csv(here::here("Data/coffee_ratings.csv"))
 ```
@@ -30,7 +31,9 @@ coffee_data <- read_csv(here::here("Data/coffee_ratings.csv"))
 
 # Section 1 - Q1 & 2
 
-# Section 2 - Q3 & 4
+# Section 2 - Q3 & 4 {#refsection1}
+
+In Section \@ref(refsection1) I want to analyze some interesting content about Arabica coffee beans and Robusta coffee Beans.
 
 ## Q3. Which top3 countries cultivated most kinds of Arabica coffee beans and Robusta coffee Beans respectively?
 

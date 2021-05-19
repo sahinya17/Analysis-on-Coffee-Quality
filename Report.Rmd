@@ -12,7 +12,10 @@ bibliography: references.bib
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = FALSE,
+                      out.width = "100%",
+                      fig.width=10,
+                      fig.height=7)
 ```
 
 ```{r warning=FALSE, message=FALSE}
@@ -78,7 +81,7 @@ top3country_geo_count <- top3country %>%
   left_join(species_country_count, by = c("region"="country_of_origin"))
 ```
 
-```{r speciescountry, out.width = "100%", fig.width=10, fig.height=7, fig.cap= "The geographical location of the top3 countries which cultivated most kinds of Arabica coffee beans and Robusta coffee Beans respectively"}
+```{r speciescountry, fig.cap= "The geographical location of the top3 countries which cultivated most kinds of Arabica coffee beans and Robusta coffee Beans respectively"}
 # make a map
 ggplot(world_map, aes(x = long, y = lat, group = group)) +
   geom_polygon(fill="white", colour = "gray50") +
@@ -95,6 +98,24 @@ ggplot(world_map, aes(x = long, y = lat, group = group)) +
 ```
 
 ## Q7. What is the difference of altitude of Arabica coffee beans and Robusta coffee Beans production areas?
+
+```{r altitude, fig.cap="The mean altitude of Arabica coffee beans and Robusta coffee Beans production areas"}
+coffee_data %>% 
+  select(species, altitude_mean_meters) %>% 
+  drop_na() %>% 
+  filter(altitude_mean_meters<=5900) %>% 
+  pivot_longer(-species, names_to = "altitude", values_to = "meter") %>% 
+  ggplot(aes(x = meter, color = species)) +
+  geom_density()+
+  facet_wrap(~altitude)
+```
+
+
+
+
+
+
+
 
 ## Q4. In which categories robusta or arabica variety has higher grades?
 

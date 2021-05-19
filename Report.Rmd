@@ -84,6 +84,16 @@ leaflet(mapCountry) %>% # create a blank canvas
 ```
 
 
+```{r bagtable}
+DT::datatable(
+country_bags %>% 
+  select(country_of_origin, total_bags),
+colnames = c("Country", "Total Bags"),
+caption = "Total Bags of Coffee sampled by Country"
+)
+```
+
+
 ## Which country produces the highest rated coffee?
 
 

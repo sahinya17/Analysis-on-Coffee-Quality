@@ -50,7 +50,37 @@ country_bags <- country_bags %>%
   )
 
 
+mapCountry<- maps::map("world", fill = TRUE, plot = FALSE)  
 
+pal_fun <- colorQuantile("YlOrRd", NULL, n = 7)
+
+total_bags <- country_bags$total_bags[match(mapCountry$names, country_bags$country_of_origin)] 
+```
+
+```{r, bagmap}
+
+leaflet(mapCountry) %>% # create a blank canvas
+  addProviderTiles("NASAGIBS.ViirsEarthAtNight2012") %>%
+  addPolygons( # draw polygons on top of the base map (tile)
+    stroke = FALSE, 
+    smoothFactor = 0.2, 
+    fillOpacity = 1,
+    color = ~pal_fun(total_bags)
+  ) %>% 
+  addCircles(data = country_bags, 
+             lat = ~mean_lat, 
+             lng =~mean_long, 
+             radius = total_bags,
+             layerId = country_bags$country_of_origin,
+             weight = log(total_bags), 
+             stroke = T,  
+             fillColor = "white", 
+             color = "black", 
+             fillOpacity = 3,
+             label = paste("Total bags of coffe tested in", 
+                           country_bags$country_of_origin, ":", country_bags$total_bags),
+             labelOptions = labelOptions(noHide = F, textsize = "15px"),
+             popupOptions = country_bags$country_of_origin)
 ```
 
 

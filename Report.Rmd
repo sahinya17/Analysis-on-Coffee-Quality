@@ -12,9 +12,15 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
+
+library(readr)
+library(dplyr)
+library(tidyverse)
+library(hrbrthemes)
+library(viridis)
 ```
 
-```{r reading-data}
+```{r reading-data, echo = FALSE, message = FALSE, warning = FALSE}
 # Get the Data
 coffee_data <- read_csv(here::here("Data/coffee_ratings.csv"))
 ```
@@ -27,5 +33,53 @@ coffee_data <- read_csv(here::here("Data/coffee_ratings.csv"))
 
 # Section 3 - Q5 & 6
 
-#Conclusion
+## Which processing method leads to better rating
+```{r expiration-date, echo = FALSE, message = FALSE, warning = FALSE, fig.width=7, fig.height = 7}
+
+processing_method <- coffee_data %>% 
+  select(processing_method:cupper_points) %>% 
+  filter(!is.na(processing_method))
+
+processing_method$mean <- rowMeans(subset(processing_method, select = c(aroma, flavor, aftertaste, acidity, body, balance, uniformity, clean_cup, sweetness, cupper_points)), na.rm = TRUE)
+
+ggplot(processing_method, aes(x=processing_method, y=mean, fill=processing_method)) +
+    geom_violin() +
+    scale_fill_viridis(discrete = TRUE, alpha=0.6, option="A") +
+    theme_ipsum() +
+    theme(
+      legend.position="none",
+      plot.title = element_text(size=11)
+    ) +
+    ggtitle("Distribution of Coffee Ratings based on Processing method") +
+    xlab("Processing Method")
+  
+  
+```
+
+The ratings for Semi-washed/Semi-pulped and Pulped natural honey has better ratings, as the average rating does not go below 8 for them. However the Washed/Wet processing method has the least rating and suggests that it is not one of the best processing methods. 
+
+## Which harvest year produces the best coffee?
+
+```{r harvest-year, echo = FALSE, message = FALSE, warning = FALSE, fig.width=7, fig.height = 7}
+best_coffee <- coffee_data %>% 
+  filter(str_detect(harvest_year, "^[1-9][0-9][0-9][0-9]$"))
+
+best_coffee$mean <- best_coffee$mean <- rowMeans(subset(best_coffee, select = c(aroma, flavor, aftertaste, acidity, body, balance, uniformity, clean_cup, sweetness, cupper_points)), na.rm = TRUE)
+
+ggplot(best_coffee, aes(harvest_year, mean)) +
+  geom_col(fill = "#8B4513") +
+    theme_ipsum() +
+    theme(
+      legend.position="none",
+      plot.title = element_text(size=11)
+    ) +
+  ggtitle("Coffee Ratings in each harvest year") +
+    xlab("Harvest Year") +
+    ylab("Average Coffee Rating")
+  
+```
+
+The data available is for the years 2010 - 2018. Among this, 2012 has the best ratings for the harvest. 2018 had the least ratings. 
+
+# Conclusion
 

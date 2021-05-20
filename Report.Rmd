@@ -31,6 +31,7 @@ It is important to know the total quantity for each country to possibly identify
 ```{r bags}
 library(tidyverse)
 library(leaflet)
+library(ggridges)
 
 # count bags per country
 country_bags <- coffee_data %>% 
@@ -112,33 +113,27 @@ coffee_data %>%
   )
 ```
 
-Figure \@ref(fig:cor) indicates that there is not an apparent association between the average cofee rating and the number of testing samples.
+Figure \@ref(fig:cor) indicates that there is not an apparent association between the average coffee rating and the number of testing samples.
  
 
 ## Which country produces the highest rated coffee?
 
-```{r rating}
-library(ggridges)
+After we identified that the number of testing samples doesn't influence the coffee rating, we can answer which countries produce the best quality of coffee.
 
+```{r rating, fig.cap="Coffee Rating Distribution by Country"}
 ggplot(coffee_data %>% filter(total_cup_points > 50), aes(x = total_cup_points, y = country_of_origin, fill = stat(x))) +
   geom_density_ridges_gradient(scale = 3, rel_min_height = 0.01, gradient_lwd = 1.) +
   scale_x_continuous(expand = c(0, 0)) +
   scale_y_discrete(expand = expand_scale(mult = c(0.01, 0.25))) +
-  scale_fill_viridis_c(name = "Temp. [F]", option = "C") +
+  scale_fill_viridis_c(name = "Rating", option = "C") +
   labs(
     title = 'Coffee Rating Distribution'
   ) +
   theme_ridges(font_size = 10, grid = TRUE) + 
-  theme(axis.title.y = element_blank())
+  theme(axis.title.y = element_blank()) 
 ```
 
-
-```{r ratingdist}
-ggplot(coffee_data %>% filter(total_cup_points > 50), aes(country_of_origin , total_cup_points, fill = country_of_origin )) +
-  geom_boxplot() +
-  coord_flip() +
-  theme(legend.position = "none") 
-```
+From Figure \@ref(fig:rating) we notice that the distribution of Ethiopian coffee rating is highly skewed to the right indicating that the coffee quality is excellent.
 
 
 

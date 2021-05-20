@@ -15,7 +15,8 @@ bibliography: references.bib
 knitr::opts_chunk$set(echo = FALSE,
                       out.width = "100%",
                       fig.width=10,
-                      fig.height=7)
+                      fig.height=7,
+                      fig.align = "center")
 ```
 
 ```{r warning=FALSE, message=FALSE}
@@ -23,7 +24,7 @@ library(tidyverse)
 library(readr)
 library(kableExtra)
 library(maps)
-library(ggridges)
+library(knitr)
 ```
 
 ```{r reading-data, warning=FALSE, message=FALSE}
@@ -35,9 +36,13 @@ coffee_data <- read_csv(here::here("Data/coffee_ratings.csv"))
 
 # Section 1 - Q1 & 2
 
-# Section 2 - Q3 & 4 {#refsection1}
+# Section 2 - Q3 & 4 & 7{#refsection1}
 
 In Section \@ref(refsection1) I want to analyze some interesting content about Arabica coffee beans and Robusta coffee beans.
+
+```{r out.width = "30%", fig.width=5, fig.height=5}
+knitr::include_graphics(here::here("image/coffee-bean.jpg"))
+```
 
 ## Q3. Which top3 countries cultivated most kinds of Arabica coffee beans and Robusta coffee beans respectively?
 

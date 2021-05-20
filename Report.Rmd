@@ -25,6 +25,8 @@ coffee_data <- read_csv(here::here("Data/coffee_ratings.csv"))
 
 ## How many bags of coffee from each country were sampled? 
 
+We begin our analysis by providing a summary of the samples used to provide the coffee ratings. For each country different varieties of coffee were sampled from different regions and companies. The samples from each country can be summarised using the number_of_bags variable.
+It is important to know the total quantity for each country to possibly identify a relationship between the number of samples used and the countries rating.
 
 ```{r bags}
 library(tidyverse)
@@ -58,7 +60,6 @@ total_bags <- country_bags$total_bags[match(mapCountry$names, country_bags$count
 ```
 
 ```{r, bagmap}
-
 leaflet(mapCountry) %>% # create a blank canvas
   addProviderTiles("NASAGIBS.ViirsEarthAtNight2012") %>%
   addPolygons( # draw polygons on top of the base map (tile)
@@ -83,6 +84,7 @@ leaflet(mapCountry) %>% # create a blank canvas
              popupOptions = country_bags$country_of_origin)
 ```
 
+The below table summarises the total bags counted for each country.
 
 ```{r bagtable}
 DT::datatable(
@@ -93,6 +95,25 @@ caption = "Total Bags of Coffee sampled by Country"
 )
 ```
 
+We observe that more than 40000 samples of Colombian coffee were used for grading.
+
+```{r cor, fig.cap="Scatterplot of average coffee rating and number of testing samples"}
+coffee_data %>% 
+  group_by(country_of_origin) %>% 
+  summarise(total_bags = sum(number_of_bags),
+            avg_rating = mean(total_cup_points, na.rm = TRUE)) %>% 
+  ggplot(aes(total_bags, avg_rating)) +
+  geom_point() +
+  theme_classic() +
+  labs(
+    x = "Total Bags",
+    y = "Average Coffee Rating",
+    title = "Association between Rating and Number of Testing Samples"
+  )
+```
+
+Figure \@ref(fig:cor) indicates that there is not an apparent association between the average cofee rating and the number of testing samples.
+ 
 
 ## Which country produces the highest rated coffee?
 
@@ -118,6 +139,7 @@ ggplot(coffee_data %>% filter(total_cup_points > 50), aes(country_of_origin , to
   coord_flip() +
   theme(legend.position = "none") 
 ```
+
 
 
 # Section 2 - Q3 & 4

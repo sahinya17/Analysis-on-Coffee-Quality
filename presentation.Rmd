@@ -1,0 +1,82 @@
+---
+title: "Final Presentation"
+subtitle: "Are different parts of the city windier than others?"  
+author: 
+  - "Panagiotis Stylianos"
+  - "Emily Sheehan"
+date: '`r Sys.Date()`'
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: ["ninjutsu", "lucy", "my_style.css"]
+    seal: false
+    includes:
+       after_body: "collapseoutput.js"
+    nature:
+      highlightStyle: github 
+      highlightLanguage: r 
+      highlightLines: true
+      highlightSpans: false 
+      countIncrementalSlides: false
+      slideNumberFormat: '%current%/%total%'
+      ratio: '16:9'
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(message=FALSE, warning=FALSE, echo=FALSE)
+```
+
+```{r xaringan-themer, message=FALSE, warning=FALSE, include=FALSE }
+library(xaringanthemer)
+library(xaringanExtra)
+library(tidyverse)
+library(leaflet)
+library(patchwork)
+library(anicon)
+library("countdown")
+library(calendR)
+library(lubridate)
+style_duo_accent(
+  primary_color = "#1381B0",
+  secondary_color = "#FF961C",
+  inverse_header_color = "#FFFFFF"
+)
+```
+class: title-slide, my-one-page-font 
+
+.center[.black[ETC5513: Final Presentation:] <br> .brown[Exploring Coffee Varieties]]
+<br>
+
+.left[.black[Authors:] <br><br>
+.pink[Sahinya Akila] <br><br>
+.pink[Stylianos Panagiotis] <br><br>
+.pink[Yiwen Liu] <br><br>
+]  <br>
+
+_.left[`r Sys.Date()`]_
+
+
+
+.footer[`r icon::fa('book')` ETC5513:Collaborative and reproducible practices]
+
+---
+class: middle center bg-main1
+
+# 咖啡
+
+--
+## .blue[The Japanese word for Coffee]
+
+--
+
+<img src="https://images.wallpaperscraft.com/image/coffee_cup_wooden_surface_106291_300x168.jpg" width="40%">
+
+--
+
+This slide is a tribute to _Yihui Xie_ creator of __[xaringan]("https://slides.yihui.org/xaringan/#1")__
+
+
+---
+
+

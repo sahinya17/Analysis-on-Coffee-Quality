@@ -71,7 +71,7 @@ _.left[`r Sys.Date()`]_
 
 
 
-.footer[`r icon::fa('book')` ETC5513:Collaborative and reproducible practices]
+.footer[ETC5513:Collaborative and reproducible practices]
 
 ---
 class: middle center bg-main1
@@ -377,5 +377,23 @@ ggplot(best_coffee, aes(harvest_year, mean)) +
 ]
 ]
 
+---
+class: split-three white center
+
+# Conclusion:
+
+
+---
+
+class: question middle
+
+Questions?
+
+```{r}
+xaringanExtra::use_editable()
+```
+
+
+<span style="color:blue";>.can-edit[--]</span>
 
 

@@ -39,6 +39,7 @@ library("countdown")
 library(calendR)
 library(lubridate)
 library(readr)
+library(ggridges)
 library(kableExtra)
 library(maps)
 library(knitr)
@@ -95,8 +96,95 @@ This slide is a tribute to _Yihui Xie_ creator of __[xaringan]("https://slides.y
 coffee_data <- read_csv(here::here("Data/coffee_ratings.csv"))
 ```
 
+## .white[How many bags of coffee from each country were sampled]
+
+.panelset[
+.panel[.panel-name[Summary]
+
+]
+
+.panel[.panel-name[Table]
+
+```{r, echo=FALSE, message=FALSE}
+country_bags <- coffee_data %>% 
+  group_by(country_of_origin) %>% 
+  summarise(total_bags = sum(number_of_bags)) %>% 
+  arrange(desc(total_bags)) 
+
+# obtain coordinates
+country_coord <- map_data("world") %>% 
+  group_by(region) %>% 
+  summarise(mean_long = mean(long, na.rm = TRUE),
+            mean_lat = mean(lat, na.rm = TRUE))
+
+# join data
+country_bags <- country_bags %>% 
+  left_join(
+    country_coord,
+    by = c("country_of_origin" = "region")
+  )
 
 
+country_bags %>% 
+  select(country_of_origin, total_bags) %>% 
+  knitr::kable(caption = "Total Bags of Coffee sampled by Country", col.names =c("Country", "Total Bags") ) %>% 
+  kableExtra::kable_styling()
+
+
+```
+
+]
+.panel[.panel-name[Plot]
+
+```{r, echo=FALSE, fig.width=12, fig.height=5}
+coffee_data %>% 
+  group_by(country_of_origin) %>% 
+  summarise(total_bags = sum(number_of_bags),
+            avg_rating = mean(total_cup_points, na.rm = TRUE)) %>% 
+  ggplot(aes(total_bags, avg_rating)) +
+  geom_point() +
+  theme_classic() +
+  labs(
+    x = "Total Bags",
+    y = "Average Coffee Rating",
+    title = "Association between Rating and Number of Testing Samples"
+  )
+```
+
+
+]
+]
+
+---
+## .white[Which country produces the highest rated coffee]
+
+.panelset[
+.panel[.panel-name[Summary]
+
+
+]
+
+.panel[.panel-name[Plot]
+
+```{r, echo=FALSE, fig.width=12, fig.height=6, message=FALSE, warning=FALSE}
+ggplot(coffee_data %>% filter(total_cup_points > 50), aes(x = total_cup_points, y = country_of_origin, fill = stat(x))) +
+  geom_density_ridges_gradient(scale = 3, rel_min_height = 0.01, gradient_lwd = 1.) +
+  scale_x_continuous(expand = c(0, 0)) +
+  scale_y_discrete(expand = expand_scale(mult = c(0.01, 0.25))) +
+  scale_fill_viridis_c(name = "Rating", option = "C") +
+  labs(
+    title = 'Coffee Rating Distribution'
+  ) +
+  theme_ridges(font_size = 10, grid = TRUE) + 
+  theme(axis.title.y = element_blank()) 
+```
+
+
+]
+]
+
+
+---
 ## .white[Which countries produce most kinds of Arabica and Robusta coffee beans]
 
 .panelset[
@@ -132,7 +220,7 @@ species_country_count %>%
 ]
 .panel[.panel-name[Plot]
 
-```{r, echo=FALSE, fig.width=12, fig.height=7}
+```{r, echo=FALSE, fig.width=12, fig.height=6}
 # world map
 world_map <- map_data("world")
 
@@ -173,7 +261,7 @@ ggplot(world_map, aes(x = long, y = lat, group = group)) +
 
 .panel[.panel-name[Plot]
 
-```{r, echo=FALSE, fig.width=12, fig.height=6}
+```{r, echo=FALSE, fig.width=12, fig.height=5}
 coffee_data %>% 
   select(species, altitude_mean_meters) %>% 
   drop_na() %>% 
@@ -199,7 +287,7 @@ coffee_data %>%
 
 .panel[.panel-name[Plot]
 
-```{r, echo=FALSE, , fig.width=12, fig.height=6}
+```{r, echo=FALSE, , fig.width=12, fig.height=5}
 species_grades <- coffee_data %>% 
   select(total_cup_points,species,aroma,flavor,aftertaste,acidity,sweetness) %>% 
   filter(total_cup_points != 0)

@@ -262,7 +262,8 @@ species_grades %>%
 # Section 3 - Q5 & 6
 
 ## Which processing method leads to better rating
-```{r expiration-date, echo = FALSE, message = FALSE, warning = FALSE, fig.width=7, fig.height = 7}
+
+```{r expiration-date, echo = FALSE, message = FALSE, warning = FALSE}
 
 processing_method <- coffee_data %>% 
   select(processing_method:cupper_points) %>% 
@@ -270,7 +271,7 @@ processing_method <- coffee_data %>%
 
 processing_method$mean <- rowMeans(subset(processing_method, select = c(aroma, flavor, aftertaste, acidity, body, balance, uniformity, clean_cup, sweetness, cupper_points)), na.rm = TRUE)
 
-ggplot(processing_method, aes(x=processing_method, y=mean, fill=processing_method)) +
+graph <- ggplot(processing_method, aes(x=processing_method, y=mean, fill=processing_method)) +
     geom_violin() +
     scale_fill_viridis(discrete = TRUE, alpha=0.6, option="A") +
     theme_ipsum() +
@@ -281,12 +282,12 @@ ggplot(processing_method, aes(x=processing_method, y=mean, fill=processing_metho
     ggtitle("Distribution of Coffee Ratings based on Processing method") +
     xlab("Processing Method")
   
-  
+ggplotly(graph)
 ```
 
-The ratings for Semi-washed/Semi-pulped and Pulped natural honey has better ratings, as the average rating does not go below 8 for them. However the Washed/Wet processing method has the least rating and suggests that it is not one of the best processing methods. 
+The ratings for Semi-washed/Semi-pulped and Pulped natural honey has better ratings, as the average rating does not go below 8 for them. Pulped Natural honey process allows the coffee beans to be dried after removing the skin of the fruit when all the is still in the beans.It’s essentially a middle ground between the dry and wet processing methods. During the natural (or dry) method, the beans are dried entirely in their natural form, while the washed (or wet) process sees all of the soft fruit residue, both skin and pulp, removed before the coffee is dried (Costa, 2020). This can also be deduced from the graph above where the ratings for the Washed/Wet processing method has the least rating and suggests that it is not one of the best processing methods. 
 
-## Which harvest year produces the best coffee?
+## Which harvest year produced the best coffee?
 
 ```{r harvest-year, echo = FALSE, message = FALSE, warning = FALSE, fig.width=7, fig.height = 7}
 best_coffee <- coffee_data %>% 
@@ -307,7 +308,19 @@ ggplot(best_coffee, aes(harvest_year, mean)) +
   
 ```
 
-The data available is for the years 2010 - 2018. Among this, 2012 has the best ratings for the harvest. 2018 had the least ratings. 
+The data available is for the years 2010 - 2018. Among this, 2012 has the best ratings for the harvest. 2018 had the least ratings. This is due to the favorable weather conditions in almost all the countries that produce coffee (Huong & Quan, 2012). 
+
+```{r}
+table <- best_coffee %>% group_by(harvest_year) %>% summarise(count = n())
+
+knitr::kable(table) %>% kable_styling()
+```
+
+As it can be seen, there is only one record for 2018. Which implies that there is some missing data in the data set.  
 
 # Conclusion
 
+# References
+Costa, B. (2020, July 24). Coffee Processing: Understanding Pulped Natural Coffee. Perfect Daily Grind. https://perfectdailygrind.com/2016/06/coffee-processing-understanding-pulped-natural-coffee/. 
+
+Huong, T., Quan, Q. (2012, May 24). 2012 Coffee Annual. Published by Global Agriculture Information Network. 

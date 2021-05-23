@@ -1,0 +1,25 @@
+.title-slide {
+  background-image: url("https://c4.wallpaperflare.com/wallpaper/46/374/498/coffee-cappuccino-cafes-rain-wallpaper-preview.jpg");
+  background-size: cover;
+  
+}
+
+.my-one-page-font {
+  font-size: 34px;
+  color:white;
+  font-family: avenir;
+}
+
+.remark-slide-content {
+    font-family: avenir;
+    background-color: #6f4e37;
+}
+
+strong {
+    color: white;
+}
+
+.panelset .panel-tabs .panel-tab {
+    min-height: 20px;}
+    li {
+    font-size: 15px;}

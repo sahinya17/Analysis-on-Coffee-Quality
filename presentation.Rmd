@@ -79,7 +79,7 @@ class: middle center bg-main1
 # 咖啡
 
 --
-## .blue[The Japanese word for Coffee]
+## .blue[The Chinese word for Coffee]
 
 --
 
@@ -96,6 +96,10 @@ This slide is a tribute to _Yihui Xie_ creator of __[xaringan]("https://slides.y
 coffee_data <- read_csv(here::here("Data/coffee_ratings.csv"))
 ```
 
+## .white[Introduction]
+
+
+---
 ## .white[How many bags of coffee from each country were sampled]
 
 .panelset[
@@ -160,6 +164,7 @@ coffee_data %>%
 
 .panelset[
 .panel[.panel-name[Summary]
+
 
 
 ]
@@ -381,10 +386,10 @@ ggplot(best_coffee, aes(harvest_year, mean)) +
 class: split-three white center
 
 # Conclusion:
-
+---
+## .white[Collaboration]
 
 ---
-
 class: question middle
 
 Questions?

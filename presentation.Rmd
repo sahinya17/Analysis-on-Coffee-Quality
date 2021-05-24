@@ -392,7 +392,15 @@ class: split-three white center
 
 # Conclusion:
 ---
-## .white[Collaboration]
+## .white[Collaboration using Github]
+
+Github is a great tool for group members to do an assignment together.
+
+- It is convenient for us to create our own branch to do different parts of assignment separately and merge together in the end. 
+- It is easy for each of us to have a look about others work through git fetch command.
+- It helps us to copy several specific files from main branch to our own branch and then do some further modification.
+- It clearly shows the change history of each of step and helpful for other group members who come in later. 
+- Also it helps us to backup and recover our work when our computers encounter some problem.
 
 ---
 class: question middle

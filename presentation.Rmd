@@ -34,8 +34,6 @@ library(xaringanExtra)
 library(tidyverse)
 library(leaflet)
 library(patchwork)
-library(anicon)
-library("countdown")
 library(calendR)
 library(lubridate)
 library(readr)
@@ -54,7 +52,6 @@ style_duo_accent(
 )
 
 xaringanExtra::use_panelset()
-
 ```
 class: title-slide, my-one-page-font 
 
@@ -79,7 +76,7 @@ class: middle center bg-main1
 # 咖啡
 
 --
-## .blue[The Japanese word for Coffee]
+## .blue[The Chinese word for Coffee]
 
 --
 
@@ -96,6 +93,10 @@ This slide is a tribute to _Yihui Xie_ creator of __[xaringan]("https://slides.y
 coffee_data <- read_csv(here::here("Data/coffee_ratings.csv"))
 ```
 
+## .white[Introduction]
+
+
+---
 ## .white[How many bags of coffee from each country were sampled]
 
 .panelset[
@@ -124,13 +125,10 @@ country_bags <- country_bags %>%
     by = c("country_of_origin" = "region")
   )
 
-
 country_bags %>% 
   select(country_of_origin, total_bags) %>% 
   knitr::kable(caption = "Total Bags of Coffee sampled by Country", col.names =c("Country", "Total Bags") ) %>% 
   kableExtra::kable_styling()
-
-
 ```
 
 ]
@@ -160,7 +158,6 @@ coffee_data %>%
 
 .panelset[
 .panel[.panel-name[Summary]
-
 
 ]
 
@@ -214,7 +211,6 @@ species_country_count <- species_country %>%
 species_country_count %>% 
   kable() %>% 
   kable_styling()
-
 ```
 
 ]
@@ -243,7 +239,6 @@ ggplot(world_map, aes(x = long, y = lat, group = group)) +
   annotate("text", label = "Uganda", x = 32.2903, y = 1.3733, size = 3)+
   annotate("text", label = "Ecuador", x = -78.1834, y = -1.8312, size = 3)+
   theme_light()
-
 ```
 
 
@@ -269,7 +264,6 @@ coffee_data %>%
   pivot_longer(-species, names_to = "altitude", values_to = "meter") %>% 
   ggplot(aes(x = meter, color = species)) +
   geom_density()
-
 ```
 
 
@@ -300,7 +294,6 @@ species_grades %>%
   geom_boxplot()+
   facet_wrap(~measure, scales = "free_y") +
   labs(x = "")
-
 ```
 
 
@@ -315,6 +308,15 @@ species_grades %>%
 .panelset[
 .panel[.panel-name[Summary]
 
+<center><img src="image/Washed_to_Dry_Processed_Coffee.png", width="40%"></center>
+
+- Pulped Natural honey process allows the coffee beans to be dried after removing the skin of the fruit when all the is still in the beans
+
+- Natural Method: Fruits are dried in the natural form
+
+- Washed/Wet Method: Removes skin and pulp before drying. 
+
+- The ratings for Pupled Natural/Honey and Semi-washed/Semi-pupled  is better when compared to Natural Dry and Washed/Wet methods.
 
 ]
 
@@ -336,7 +338,6 @@ ggplot(processing_method, aes(x=processing_method, y=mean, fill=processing_metho
     ) +
     ggtitle("Distribution of Coffee Ratings based on Processing method") +
     xlab("Processing Method")
-
 ```
 
 
@@ -351,6 +352,18 @@ ggplot(processing_method, aes(x=processing_method, y=mean, fill=processing_metho
 .panelset[
 .panel[.panel-name[Summary]
 
+- 2012 has the best harvest and 2018 has the least.
+- Due to favorable weather conditions in the year 2012.  
+- Number of records available for 2018 is significantly lesser than 2018. 
+
+```{r, fig.align='right'}
+best_coffee <- coffee_data %>% 
+  filter(str_detect(harvest_year, "^[1-9][0-9][0-9][0-9]$"))
+best_coffee$mean <- best_coffee$mean <- rowMeans(subset(best_coffee, select = c(aroma, flavor, aftertaste, acidity, body, balance, uniformity, clean_cup, sweetness, cupper_points)), na.rm = TRUE)
+
+table <- best_coffee %>% group_by(harvest_year) %>% summarise(count = n()) %>% arrange(desc(count)) 
+knitr::kable(table) %>% kable_styling()
+```
 
 ]
 
@@ -382,9 +395,25 @@ class: split-three white center
 
 # Conclusion:
 
+- The highest number of samples were 41204 bag samples from Colombia and the least was 1 bag sample from Mauritius.
+
+- No relationship between the number of test samples and average coffee rating. 
+
+- The rating for Ethiopian Coffee is the highest. 
+
+- Arabica coffee beans were cultivated mostly by Mexico, Colombia and Guatemala (South American Region). Whereas Robusta was cultivated extensively by India, Uganda and Ecuador. 
+
+- The mean altitude of Arabica coffee beans production areas is higher than that of many Robusta coffee Beans production areas even though there are some exceptions.
+
+- Acidity, aftertaste, aroma and flavor aspects, of Robusta coffee beans is higher than that of Arabica coffee beans, which means Robusta coffee beans have a better performance than Arabica coffee beans. 
+
+- Ratings for Semi-washed/Semi-pulped and Pulped natural honey is better when compared to Washed/Wet processing method. 
+
+- 2012 has been the best year in terms of harvesting the coffee beans. 
+---
+## .white[Collaboration]
 
 ---
-
 class: question middle
 
 Questions?
@@ -393,7 +422,5 @@ Questions?
 xaringanExtra::use_editable()
 ```
 
-
 <span style="color:blue";>.can-edit[--]</span>
-
 

@@ -52,6 +52,7 @@ style_duo_accent(
 )
 
 xaringanExtra::use_panelset()
+
 ```
 class: title-slide, my-one-page-font 
 
@@ -125,10 +126,12 @@ country_bags <- country_bags %>%
     by = c("country_of_origin" = "region")
   )
 
+
 country_bags %>% 
   select(country_of_origin, total_bags) %>% 
   knitr::kable(caption = "Total Bags of Coffee sampled by Country", col.names =c("Country", "Total Bags") ) %>% 
   kableExtra::kable_styling()
+
 ```
 
 ]
@@ -187,10 +190,15 @@ ggplot(coffee_data %>% filter(total_cup_points > 50), aes(x = total_cup_points, 
 .panelset[
 .panel[.panel-name[Summary]
 
+
 .center[
 <img src="image/coffee-bean.jpg" width="40%">
 ]
 
+- In this time period Mexico, Colombia and Guatemala cultivated the most kinds of Arabica coffee beans and India, Uganda and Ecuador cultivated the most kinds of Robusta coffee beans.
+- There are much more types of Arabica coffee beans compared to Robusta coffee beans.
+- It seems to be an obvious coffee production zone, which is between the equator and 30 degrees north latitude. In these zones, the annual average temperature and rainfall are in line with the coffee bean growing conditions.
+- The countries that cultivated Arabica coffee beans are all located in Central and South America, while the countries that cultivated Robusta coffee beans are located in several continents like South America, Eastern Africa and India. It is related to the environment required for the growth of different coffee beans.
 
 ]
 
@@ -251,6 +259,8 @@ ggplot(world_map, aes(x = long, y = lat, group = group)) +
 .panelset[
 .panel[.panel-name[Summary]
 
+- The mean altitude of Arabica coffee beans production areas is concentrated from 1000 to 1800 meters. 
+- There exists two peaks about the mean altitude of Robusta coffee Beans production areas, and the ranges are concentrated from 500 to 1600 meters and 2800 to 3400 meters respectively. However, the probability of the second peak is much less than the first one.
 
 ]
 
@@ -276,6 +286,10 @@ coffee_data %>%
 .panelset[
 .panel[.panel-name[Summary]
 
+- In acidity, aftertaste, aroma and flavor aspects, the median score of Robusta coffee beans is higher than that of Arabica coffee beans, which means Robusta coffee beans have a better performance than Arabica coffee beans. 
+- As to sweetness, Arabica coffee beans is much better than Robusta coffee beans. 
+- Total point, which combines these primary aspects and some other aspects, shows that Arabica coffee beans has a better quality. 
+- Maybe these grades would give some help when people choose coffee beans.
 
 ]
 
@@ -317,7 +331,6 @@ species_grades %>%
 - Washed/Wet Method: Removes skin and pulp before drying. 
 
 - The ratings for Pupled Natural/Honey and Semi-washed/Semi-pupled  is better when compared to Natural Dry and Washed/Wet methods.
-
 ]
 
 .panel[.panel-name[Plot]
@@ -365,6 +378,7 @@ table <- best_coffee %>% group_by(harvest_year) %>% summarise(count = n()) %>% a
 knitr::kable(table) %>% kable_styling()
 ```
 
+
 ]
 
 .panel[.panel-name[Plot]
@@ -410,8 +424,18 @@ class: split-three white center
 - Ratings for Semi-washed/Semi-pulped and Pulped natural honey is better when compared to Washed/Wet processing method. 
 
 - 2012 has been the best year in terms of harvesting the coffee beans. 
+
+
 ---
-## .white[Collaboration]
+## .white[Collaboration using Github]
+
+Github is a great tool for group members to do an assignment together.
+
+- It is convenient for us to create our own branch to do different parts of assignment separately and merge together in the end. 
+- It is easy for each of us to have a look about others work through git fetch command.
+- It helps us to copy several specific files from main branch to our own branch and then do some further modification.
+- It clearly shows the change history of each of step and helpful for other group members who come in later. 
+- Also it helps us to backup and recover our work when our computers encounter some problem.
 
 ---
 class: question middle
@@ -422,5 +446,11 @@ Questions?
 xaringanExtra::use_editable()
 ```
 
+
 <span style="color:blue";>.can-edit[--]</span>
+
+
+
+
+
 

@@ -28,6 +28,7 @@ library(knitr)
 library(dplyr)
 library(hrbrthemes)
 library(viridis)
+library(plotly)
 ```
 
 ```{r reading-data, echo = FALSE, message = FALSE, warning = FALSE}
@@ -263,7 +264,7 @@ species_grades %>%
 
 ## Which processing method leads to better rating
 
-```{r expiration-date, echo = FALSE, message = FALSE, warning = FALSE}
+```{r expiration-date, echo = FALSE, message = FALSE, warning = FALSE, fig.cap="Distribution of Coffee Ratings based on Processing method"}
 
 processing_method <- coffee_data %>% 
   select(processing_method:cupper_points) %>% 
@@ -279,17 +280,16 @@ graph <- ggplot(processing_method, aes(x=processing_method, y=mean, fill=process
       legend.position="none",
       plot.title = element_text(size=11)
     ) +
-    ggtitle("Distribution of Coffee Ratings based on Processing method") +
     xlab("Processing Method")
   
 ggplotly(graph)
 ```
 
-The ratings for Semi-washed/Semi-pulped and Pulped natural honey has better ratings, as the average rating does not go below 8 for them. Pulped Natural honey process allows the coffee beans to be dried after removing the skin of the fruit when all the is still in the beans.It’s essentially a middle ground between the dry and wet processing methods. During the natural (or dry) method, the beans are dried entirely in their natural form, while the washed (or wet) process sees all of the soft fruit residue, both skin and pulp, removed before the coffee is dried (Costa, 2020). This can also be deduced from the graph above where the ratings for the Washed/Wet processing method has the least rating and suggests that it is not one of the best processing methods. 
+In Figure \@ref(fig:expiration-date) the ratings for Semi-washed/Semi-pulped and Pulped natural honey is better, as the average rating does not go below 8 for them. Pulped Natural honey process allows the coffee beans to be dried after removing the skin of the fruit when all the is still in the beans.It’s essentially a middle ground between the dry and wet processing methods. During the natural (or dry) method, the beans are dried entirely in their natural form, while the washed (or wet) process sees all of the soft fruit residue, both skin and pulp, removed before the coffee is dried (Costa, 2020). This can also be deduced from the graph above where the ratings for the Washed/Wet processing method has the least rating and suggests that it is not one of the best processing methods. 
 
 ## Which harvest year produced the best coffee?
 
-```{r harvest-year, echo = FALSE, message = FALSE, warning = FALSE, fig.width=7, fig.height = 7}
+```{r harvest-year, echo = FALSE, message = FALSE, warning = FALSE, fig.cap="Coffee Ratings in each harvest year"}
 best_coffee <- coffee_data %>% 
   filter(str_detect(harvest_year, "^[1-9][0-9][0-9][0-9]$"))
 
@@ -301,24 +301,39 @@ ggplot(best_coffee, aes(harvest_year, mean)) +
     theme(
       legend.position="none",
       plot.title = element_text(size=11)
-    ) +
-  ggtitle("Coffee Ratings in each harvest year") +
+    )+
     xlab("Harvest Year") +
     ylab("Average Coffee Rating")
   
 ```
 
-The data available is for the years 2010 - 2018. Among this, 2012 has the best ratings for the harvest. 2018 had the least ratings. This is due to the favorable weather conditions in almost all the countries that produce coffee (Huong & Quan, 2012). 
+It can be observed from  Figure \@ref(fig:harvest-year) that the data available is for the years 2010 - 2018. Among this, 2012 has the best ratings for the harvest. 2018 had the least ratings. This is due to the favorable weather conditions in almost all the countries that produce coffee (Huong & Quan, 2012). 
 
-```{r}
-table <- best_coffee %>% group_by(harvest_year) %>% summarise(count = n())
+```{r harvesttable}
+table <- best_coffee %>% group_by(harvest_year) %>% summarise(count = n()) %>% arrange(desc(count))
 
 knitr::kable(table) %>% kable_styling()
 ```
 
-As it can be seen, there is only one record for 2018. Which implies that there is some missing data in the data set.  
+As it can be seen, there is only one record for 2018. Which implies that there is some missing data in the data set.
 
 # Conclusion
+
+- The highest number of samples were 41204 bag samples from Colombia and the least was 1 bag sample from Mauritius.
+
+- No relationship between the number of test samples and average coffee rating. 
+
+- The rating for Ethiopian Coffee is the highest. 
+
+- Arabica coffee beans were cultivated mostly by Mexico, Colombia and Guatemala (South American Region). Whereas Robusta was cultivated extensively by India, Uganda and Ecuador. 
+
+- The mean altitude of Arabica coffee beans production areas is higher than that of many Robusta coffee Beans production areas even though there are some exceptions.
+
+- Acidity, aftertaste, aroma and flavor aspects, of Robusta coffee beans is higher than that of Arabica coffee beans, which means Robusta coffee beans have a better performance than Arabica coffee beans. 
+
+- Ratings for Semi-washed/Semi-pulped and Pulped natural honey is better when compared to Washed/Wet processing method. 
+
+- 2012 has been the best year in terms of harvesting the coffee beans. 
 
 # References
 Costa, B. (2020, July 24). Coffee Processing: Understanding Pulped Natural Coffee. Perfect Daily Grind. https://perfectdailygrind.com/2016/06/coffee-processing-understanding-pulped-natural-coffee/. 

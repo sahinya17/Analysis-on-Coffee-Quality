@@ -94,14 +94,19 @@ This slide is a tribute to _Yihui Xie_ creator of __[xaringan]("https://slides.y
 coffee_data <- read_csv(here::here("Data/coffee_ratings.csv"))
 ```
 
-## .white[Introduction]
+## .center[.white[Introduction]]
 
+* Data obtained from __The Coffee Quality Institute__.
+* Grades of Arabica and Robusta beans, across many countries and professionally rated on a 0-100 scale.
 
 ---
 ## .white[How many bags of coffee from each country were sampled]
 
 .panelset[
 .panel[.panel-name[Summary]
+
+We begin our analysis by providing a summary of the samples used to provide the coffee ratings. For each country different varieties of coffee were sampled from different regions and companies. The samples from each country can be summarised using the number_of_bags variable.
+It is important to know the total quantity for each country to possibly identify a relationship between the number of samples used and the countries rating.
 
 ]
 
@@ -161,6 +166,8 @@ coffee_data %>%
 
 .panelset[
 .panel[.panel-name[Summary]
+
+After we identified that the number of testing samples doesn't influence the coffee rating, we can answer which countries produce the best quality of coffee.
 
 ]
 

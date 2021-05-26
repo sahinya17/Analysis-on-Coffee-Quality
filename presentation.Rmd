@@ -96,6 +96,7 @@ coffee_data <- read_csv(here::here("Data/coffee_ratings.csv"))
 
 ## .center[.white[Introduction]]
 
+
 * Data obtained from __The Coffee Quality Institute__.
 * Grades of Arabica and Robusta beans, across many countries and professionally rated on a 0-100 scale.
 
@@ -197,10 +198,6 @@ ggplot(coffee_data %>% filter(total_cup_points > 50), aes(x = total_cup_points, 
 .panelset[
 .panel[.panel-name[Summary]
 
-
-.center[
-<img src="image/coffee-bean.jpg" width="40%">
-]
 
 - In this time period Mexico, Colombia and Guatemala cultivated the most kinds of Arabica coffee beans and India, Uganda and Ecuador cultivated the most kinds of Robusta coffee beans.
 - There are much more types of Arabica coffee beans compared to Robusta coffee beans.
@@ -412,10 +409,10 @@ ggplot(best_coffee, aes(harvest_year, mean)) +
 ]
 
 ---
-class: split-three white center
 
 # Conclusion:
 
+.left[
 - The highest number of samples were 41204 bag samples from Colombia and the least was 1 bag sample from Mauritius.
 
 - No relationship between the number of test samples and average coffee rating. 
@@ -431,7 +428,7 @@ class: split-three white center
 - Ratings for Semi-washed/Semi-pulped and Pulped natural honey is better when compared to Washed/Wet processing method. 
 
 - 2012 has been the best year in terms of harvesting the coffee beans. 
-
+]
 
 ---
 ## .white[Collaboration using Github]

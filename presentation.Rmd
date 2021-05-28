@@ -1,9 +1,6 @@
 ---
 title: "Final Presentation"
-subtitle: "Are different parts of the city windier than others?"  
-author: 
-  - "Panagiotis Stylianos"
-  - "Emily Sheehan"
+subtitle: "Exploring Coffee Varieties"  
 date: '`r Sys.Date()`'
 output:
   xaringan::moon_reader:
@@ -32,9 +29,7 @@ knitr::opts_chunk$set(echo = FALSE,
 library(xaringanthemer)
 library(xaringanExtra)
 library(tidyverse)
-library(leaflet)
 library(patchwork)
-library(calendR)
 library(lubridate)
 library(readr)
 library(ggridges)

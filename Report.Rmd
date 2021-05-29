@@ -30,6 +30,8 @@ library(hrbrthemes)
 library(viridis)
 library(plotly)
 library(bookdown)
+library(leaflet)
+library(ggridges)
 ```
 
 ```{r reading-data, echo = FALSE, message = FALSE, warning = FALSE}
@@ -47,10 +49,6 @@ We begin our analysis by providing a summary of the samples used to provide the 
 It is important to know the total quantity for each country to possibly identify a relationship between the number of samples used and the countries rating.
 
 ```{r bags, echo = FALSE, message = FALSE, warning = FALSE}
-library(tidyverse)
-library(leaflet)
-library(ggridges)
-
 # count bags per country
 country_bags <- coffee_data %>% 
   group_by(country_of_origin) %>% 
@@ -338,7 +336,7 @@ As it can be seen in Table \@ref(tab:harvesttable), there is only one record for
 
 # Acknowledgements
 
-This report was written using R[@R]. The following R packages were used to produce this report:`tidyverse`[@tidyverse], `readr`[@readr], `kableExtra`[@kableExtra], `bookdown`[@bookdown], `maps`[@maps], `knitr`[@knitr], `dplyr`[@dplyr], `hrbrthemes`[@hrbrthemes], `viridis`[@viridis] and `plotly`[@plotly].
+This report was written using R[@R]. The following R packages were used to produce this report:`tidyverse`[@tidyverse], `readr`[@readr], `kableExtra`[@kableExtra], `bookdown`[@bookdown], `maps`[@maps], `knitr`[@knitr], `dplyr`[@dplyr], `hrbrthemes`[@hrbrthemes], `viridis`[@viridis], `plotly`[@plotly], `leaflet`[@leaflet] and `ggridges`[@ggridges].
 
 The origin data used for analysis comes from [this github website](https://github.com/rfordatascience/tidytuesday/tree/master/data/2020/2020-07-07).
 

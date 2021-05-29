@@ -29,6 +29,7 @@ library(dplyr)
 library(hrbrthemes)
 library(viridis)
 library(plotly)
+library(bookdown)
 ```
 
 ```{r reading-data, echo = FALSE, message = FALSE, warning = FALSE}
@@ -333,7 +334,13 @@ As it can be seen in Table \@ref(tab:harvesttable), there is only one record for
 
 - Ratings for Semi-washed/Semi-pulped and Pulped natural honey is better when compared to Washed/Wet processing method. 
 
-- 2012 has been the best year in terms of harvesting the coffee beans. 
+- 2012 has been the best year in terms of harvesting the coffee beans.
+
+# Acknowledgements
+
+This report was written using R[@R]. The following R packages were used to produce this report:`tidyverse`[@tidyverse], `readr`[@readr], `kableExtra`[@kableExtra], `bookdown`[@bookdown], `maps`[@maps], `knitr`[@knitr], `dplyr`[@dplyr], `hrbrthemes`[@hrbrthemes], `viridis`[@viridis] and `plotly`[@plotly].
+
+The origin data used for analysis comes from [this github website](https://github.com/rfordatascience/tidytuesday/tree/master/data/2020/2020-07-07).
 
 # References
 Costa, B. (2020, July 24). Coffee Processing: Understanding Pulped Natural Coffee. Perfect Daily Grind. https://perfectdailygrind.com/2016/06/coffee-processing-understanding-pulped-natural-coffee/. 

@@ -318,21 +318,11 @@ As it can be seen in Table \@ref(tab:harvesttable), there is only one record for
 
 # Conclusion
 
-- The highest number of samples were 41204 bag samples from Colombia and the least was 1 bag sample from Mauritius.
+From the analysis above, we could find that there is no relationship between the number of test samples and average coffee rating. The highest number of samples is 41204 bag samples from Colombia and the least is 1 bag sample from Mauritius. The rating for Ethiopian Coffee is the highest.
 
-- No relationship between the number of test samples and average coffee rating. 
+Besides, we find that Arabica coffee beans are cultivated mostly by Mexico, Colombia and Guatemala (South American Region). Whereas Robusta coffee beans are cultivated mostly by India, Uganda and Ecuador. In addition, the mean altitude of Arabica coffee beans production areas is higher than that of many Robusta coffee Beans production areas even though there are some exceptions. What's more, Arabica coffee beans has a higher median total point than Robusta coffee Beans, which means it has a better performance.
 
-- The rating for Ethiopian Coffee is the highest. 
-
-- Arabica coffee beans were cultivated mostly by Mexico, Colombia and Guatemala (South American Region). Whereas Robusta was cultivated extensively by India, Uganda and Ecuador. 
-
-- The mean altitude of Arabica coffee beans production areas is higher than that of many Robusta coffee Beans production areas even though there are some exceptions.
-
-- Acidity, aftertaste, aroma and flavor aspects, of Robusta coffee beans is higher than that of Arabica coffee beans, which means Robusta coffee beans have a better performance than Arabica coffee beans. 
-
-- Ratings for Semi-washed/Semi-pulped and Pulped natural honey is better when compared to Washed/Wet processing method. 
-
-- 2012 has been the best year in terms of harvesting the coffee beans.
+Finally, it indicates that ratings for Semi-washed/Semi-pulped and Pulped natural honey is better when compared to Washed/Wet processing method. And it tells us that 2012 has been the best year in terms of harvesting the coffee beans.
 
 # Acknowledgements
 

@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="author" content="Panagiotis Stylianos" />
     <meta name="author" content="Emily Sheehan" />
-    <meta name="date" content="2021-05-25" />
+    <meta name="date" content="2021-05-26" />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/ninjutsu.css" rel="stylesheet" />
     <link href="libs/remark-css/lucy.css" rel="stylesheet" />
@@ -13,7 +13,7 @@
     <script src="libs/panelset/panelset.js"></script>
     <script src="libs/kePrint/kePrint.js"></script>
     <link href="libs/lightable/lightable.css" rel="stylesheet" />
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"x3ceb9c4289b47f3ab86b60c2fd787b4","expires":14}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"b3951a6a3e994fcb9e41e0b356c08533","expires":14}</script>
     <script src="libs/himalaya/himalaya.js"></script>
     <script src="libs/js-cookie/js.cookie.js"></script>
     <link href="libs/editable/editable.css" rel="stylesheet" />
@@ -38,7 +38,7 @@ class: title-slide, my-one-page-font
 .pink[Yiwen Liu] &lt;br&gt;&lt;br&gt;
 ]  &lt;br&gt;
 
-_.left[2021-05-25]_
+_.left[2021-05-26]_
 
 
 
@@ -64,14 +64,20 @@ This slide is a tribute to _Yihui Xie_ creator of __[xaringan]("https://slides.y
 ---
 
 
-## .white[Introduction]
+## .center[.white[Introduction]]
 
+
+* Data obtained from __The Coffee Quality Institute__.
+* Grades of Arabica and Robusta beans, across many countries and professionally rated on a 0-100 scale.
 
 ---
 ## .white[How many bags of coffee from each country were sampled]
 
 .panelset[
 .panel[.panel-name[Summary]
+
+We begin our analysis by providing a summary of the samples used to provide the coffee ratings. For each country different varieties of coffee were sampled from different regions and companies. The samples from each country can be summarised using the number_of_bags variable.
+It is important to know the total quantity for each country to possibly identify a relationship between the number of samples used and the countries rating.
 
 ]
 
@@ -252,6 +258,8 @@ This slide is a tribute to _Yihui Xie_ creator of __[xaringan]("https://slides.y
 .panelset[
 .panel[.panel-name[Summary]
 
+After we identified that the number of testing samples doesn't influence the coffee rating, we can answer which countries produce the best quality of coffee.
+
 ]
 
 .panel[.panel-name[Plot]
@@ -269,10 +277,6 @@ This slide is a tribute to _Yihui Xie_ creator of __[xaringan]("https://slides.y
 .panelset[
 .panel[.panel-name[Summary]
 
-
-.center[
-&lt;img src="image/coffee-bean.jpg" width="40%"&gt;
-]
 
 - In this time period Mexico, Colombia and Guatemala cultivated the most kinds of Arabica coffee beans and India, Uganda and Ecuador cultivated the most kinds of Robusta coffee beans.
 - There are much more types of Arabica coffee beans compared to Robusta coffee beans.
@@ -472,10 +476,10 @@ This slide is a tribute to _Yihui Xie_ creator of __[xaringan]("https://slides.y
 ]
 
 ---
-class: split-three white center
 
 # Conclusion:
 
+.left[
 - The highest number of samples were 41204 bag samples from Colombia and the least was 1 bag sample from Mauritius.
 
 - No relationship between the number of test samples and average coffee rating. 
@@ -491,7 +495,7 @@ class: split-three white center
 - Ratings for Semi-washed/Semi-pulped and Pulped natural honey is better when compared to Washed/Wet processing method. 
 
 - 2012 has been the best year in terms of harvesting the coffee beans. 
-
+]
 
 ---
 ## .white[Collaboration using Github]

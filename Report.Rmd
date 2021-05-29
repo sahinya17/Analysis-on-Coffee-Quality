@@ -38,14 +38,14 @@ coffee_data <- read_csv(here::here("Data/coffee_ratings.csv"))
 
 # Introduction 
 
-# Section 1 - Q1 & 2
+# Section 1
 
 ## How many bags of coffee from each country were sampled? 
 
 We begin our analysis by providing a summary of the samples used to provide the coffee ratings. For each country different varieties of coffee were sampled from different regions and companies. The samples from each country can be summarised using the number_of_bags variable.
 It is important to know the total quantity for each country to possibly identify a relationship between the number of samples used and the countries rating.
 
-```{r bags}
+```{r bags, echo = FALSE, message = FALSE, warning = FALSE}
 library(tidyverse)
 library(leaflet)
 library(ggridges)
@@ -77,7 +77,7 @@ pal_fun <- colorQuantile("YlOrRd", NULL, n = 7)
 total_bags <- country_bags$total_bags[match(mapCountry$names, country_bags$country_of_origin)] 
 ```
 
-```{r, bagmap}
+```{r, bagmap, echo = FALSE, message = FALSE, warning = FALSE}
 leaflet(mapCountry) %>% # create a blank canvas
   addProviderTiles("NASAGIBS.ViirsEarthAtNight2012") %>%
   addPolygons( # draw polygons on top of the base map (tile)
@@ -104,7 +104,7 @@ leaflet(mapCountry) %>% # create a blank canvas
 
 The below table summarises the total bags counted for each country.
 
-```{r bagtable}
+```{r bagtable, echo = FALSE, message = FALSE, warning = FALSE}
 DT::datatable(
 country_bags %>% 
   select(country_of_origin, total_bags),
@@ -115,7 +115,7 @@ caption = "Total Bags of Coffee sampled by Country"
 
 We observe that more than 40000 samples of Colombian coffee were used for grading.
 
-```{r cor, fig.cap="Scatterplot of average coffee rating and number of testing samples"}
+```{r cor, fig.cap="Scatterplot of average coffee rating and number of testing samples", echo = FALSE, message = FALSE, warning = FALSE}
 coffee_data %>% 
   group_by(country_of_origin) %>% 
   summarise(total_bags = sum(number_of_bags),
@@ -137,7 +137,7 @@ Figure \@ref(fig:cor) indicates that there is not an apparent association betwee
 
 After we identified that the number of testing samples doesn't influence the coffee rating, we can answer which countries produce the best quality of coffee.
 
-```{r rating, fig.cap="Coffee Rating Distribution by Country"}
+```{r rating, fig.cap="Coffee Rating Distribution by Country", echo = FALSE, message = FALSE, warning = FALSE}
 ggplot(coffee_data %>% filter(total_cup_points > 50), aes(x = total_cup_points, y = country_of_origin, fill = stat(x))) +
   geom_density_ridges_gradient(scale = 3, rel_min_height = 0.01, gradient_lwd = 1.) +
   scale_x_continuous(expand = c(0, 0)) +
@@ -153,22 +153,22 @@ ggplot(coffee_data %>% filter(total_cup_points > 50), aes(x = total_cup_points, 
 From Figure \@ref(fig:rating) we notice that the distribution of Ethiopian coffee rating is highly skewed to the right indicating that the coffee quality is excellent.
 
 
-# Section 2 - Q3 & 4 & 7{#refsection1}
+# Section 2 {#refsection1}
 
 In Section \@ref(refsection1) I want to analyze some interesting content about Arabica coffee beans and Robusta coffee beans.
 
-```{r out.width = "30%", fig.width=5, fig.height=5}
+```{r out.width = "30%", fig.width=5, fig.height=5, echo = FALSE, message = FALSE, warning = FALSE}
 knitr::include_graphics(here::here("image/coffee-bean.jpg"))
 ```
 
-## Q3. Which top3 countries cultivated most kinds of Arabica coffee beans and Robusta coffee beans respectively?
+## Which top3 countries cultivated most kinds of Arabica coffee beans and Robusta coffee beans respectively?
 
-```{r}
+```{r, echo = FALSE, message = FALSE, warning = FALSE}
 species_country <- coffee_data %>% 
   select(country_of_origin, species)
 ```
 
-```{r warning=FALSE, message=FALSE}
+```{r, echo = FALSE, message = FALSE, warning = FALSE}
 # filter the top3 countries
 species_country_count <- species_country %>% 
   group_by(country_of_origin, species) %>% 
@@ -181,7 +181,7 @@ species_country_count <- species_country %>%
 
 The Table \@ref(tab:species) shows that Mexico, Colombia and Guatemala cultivated the most kinds of Arabica coffee beans and India, Uganda and Ecuador cultivated the most kinds of Robusta coffee beans. Also it could find that there are much more types of Arabica coffee beans compared to Robusta coffee beans, which conforms to the content given by @bunn2015bitter.
 
-```{r species}
+```{r species, echo = FALSE, message = FALSE, warning = FALSE}
 # make a table
 species_country_count %>% 
   kable(caption = "The top3 countries which cultivated most kinds of Arabica coffee beans and Robusta coffee beans respectively") %>% 
@@ -192,7 +192,7 @@ Now, the Figure \@ref(fig:speciescountry) shows the geographical location of thi
 
 Besides, it indicates that the countries that cultivated Arabica coffee beans are all located in Central and South America, while the countries that cultivated Robusta coffee beans are located in several continents like South America, Eastern Africa and India. It is related to the environment required for the growth of different coffee beans.
 
-```{r}
+```{r, echo = FALSE, message = FALSE, warning = FALSE}
 # world map
 world_map <- map_data("world")
 
@@ -204,7 +204,7 @@ top3country_geo_count <- top3country %>%
   left_join(species_country_count, by = c("region"="country_of_origin"))
 ```
 
-```{r speciescountry, fig.cap= "The geographical location of the top3 countries which cultivated most kinds of Arabica coffee beans and Robusta coffee beans respectively"}
+```{r speciescountry, fig.cap= "The geographical location of the top3 countries which cultivated most kinds of Arabica coffee beans and Robusta coffee beans respectively", echo = FALSE, message = FALSE, warning = FALSE}
 # make a map
 ggplot(world_map, aes(x = long, y = lat, group = group)) +
   geom_polygon(fill="white", colour = "gray50") +
@@ -221,13 +221,13 @@ ggplot(world_map, aes(x = long, y = lat, group = group)) +
 ```
 
 
-## Q7. What is the difference of altitude of Arabica coffee beans and Robusta coffee beans production areas?
+## What is the difference of altitude of Arabica coffee beans and Robusta coffee beans production areas?
 
 Figure \@ref(fig:altitude) indicates that the mean altitude of Arabica coffee beans production areas is concentrated from 1000 to 1800 meters. Besides, people could surprisingly find that there exists two peaks about the mean altitude of Robusta coffee Beans production areas, and the ranges are concentrated from 500 to 1600 meters and 2800 to 3400 meters respectively. However, the probability of the second peak is much less than the first one.
 
 So it could say that the mean altitude of Arabica coffee beans production areas is higher than that of many Robusta coffee Beans production areas even though there are some exceptions. 
 
-```{r altitude, fig.cap="The mean altitude of Arabica coffee beans and Robusta coffee beans production areas"}
+```{r altitude, fig.cap="The mean altitude of Arabica coffee beans and Robusta coffee beans production areas", echo = FALSE, message = FALSE, warning = FALSE}
 coffee_data %>% 
   select(species, altitude_mean_meters) %>% 
   drop_na() %>% 
@@ -238,9 +238,9 @@ coffee_data %>%
 ```
 
 
-## Q4. In which species Arabica coffee beans or Robusta coffee beans has higher grades?
+## In which species Arabica coffee beans or Robusta coffee beans has higher grades?
 
-```{r}
+```{r, echo = FALSE, message = FALSE, warning = FALSE}
 species_grades <- coffee_data %>% 
   select(total_cup_points,species,aroma,flavor,aftertaste,acidity,sweetness) %>% 
   filter(total_cup_points != 0)
@@ -248,7 +248,7 @@ species_grades <- coffee_data %>%
 
 Figure \@ref(fig:grades) shows the scores of several primary different aspects of Arabica coffee beans and Robusta coffee beans and their total points. It is obvious that in acidity, aftertaste, aroma and flavor aspects, the median score of Robusta coffee beans is higher than that of Arabica coffee beans, which means Robusta coffee beans have a better performance than Arabica coffee beans. As to sweetness, Arabica coffee beans is much better than Robusta coffee beans. In the end, total point, which combines these primary aspects and some other aspects, shows that Arabica coffee beans has a better quality. Maybe these grades would give some help when people choose coffee beans.
 
-```{r grades, fig.cap="Scores of several different aspects of Arabica coffee beans and Robusta coffee beans and their total points"}
+```{r grades, fig.cap="Scores of several different aspects of Arabica coffee beans and Robusta coffee beans and their total points", echo = FALSE, message = FALSE, warning = FALSE}
 species_grades %>% 
   pivot_longer(-species, names_to = "measure", values_to = "grades") %>% 
   mutate(species = as.factor(species),
@@ -260,7 +260,7 @@ species_grades %>%
 ```
 
 
-# Section 3 - Q5 & 6
+# Section 3
 
 ## Which processing method leads to better rating
 
@@ -312,10 +312,10 @@ It can be observed from  Figure \@ref(fig:harvest-year) that the data available 
 ```{r harvesttable}
 table <- best_coffee %>% group_by(harvest_year) %>% summarise(count = n()) %>% arrange(desc(count))
 
-knitr::kable(table) %>% kable_styling()
+knitr::kable(table, caption = "Number of records for each year") %>% kable_styling()
 ```
 
-As it can be seen, there is only one record for 2018. Which implies that there is some missing data in the data set.
+As it can be seen in Table \@ref(tab:harvesttable), there is only one record for 2018. Which implies that there is some missing data in the data set.
 
 # Conclusion
 

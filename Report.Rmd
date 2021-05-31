@@ -29,6 +29,9 @@ library(dplyr)
 library(hrbrthemes)
 library(viridis)
 library(plotly)
+library(bookdown)
+library(leaflet)
+library(ggridges)
 ```
 
 ```{r reading-data, echo = FALSE, message = FALSE, warning = FALSE}
@@ -46,10 +49,6 @@ We begin our analysis by providing a summary of the samples used to provide the 
 It is important to know the total quantity for each country to possibly identify a relationship between the number of samples used and the countries rating.
 
 ```{r bags, echo = FALSE, message = FALSE, warning = FALSE}
-library(tidyverse)
-library(leaflet)
-library(ggridges)
-
 # count bags per country
 country_bags <- coffee_data %>% 
   group_by(country_of_origin) %>% 
@@ -319,21 +318,17 @@ As it can be seen in Table \@ref(tab:harvesttable), there is only one record for
 
 # Conclusion
 
-- The highest number of samples were 41204 bag samples from Colombia and the least was 1 bag sample from Mauritius.
+From the analysis above, we could find that there is no relationship between the number of test samples and average coffee rating. The highest number of samples is 41204 bag samples from Colombia and the least is 1 bag sample from Mauritius. The rating for Ethiopian Coffee is the highest.
 
-- No relationship between the number of test samples and average coffee rating. 
+Besides, we find that Arabica coffee beans are cultivated mostly by Mexico, Colombia and Guatemala (South American Region). Whereas Robusta coffee beans are cultivated mostly by India, Uganda and Ecuador. In addition, the mean altitude of Arabica coffee beans production areas is higher than that of many Robusta coffee Beans production areas even though there are some exceptions. What's more, Arabica coffee beans has a higher median total point than Robusta coffee Beans, which means it has a better performance.
 
-- The rating for Ethiopian Coffee is the highest. 
+Finally, it indicates that ratings for Semi-washed/Semi-pulped and Pulped natural honey is better when compared to Washed/Wet processing method. And it tells us that 2012 has been the best year in terms of harvesting the coffee beans.
 
-- Arabica coffee beans were cultivated mostly by Mexico, Colombia and Guatemala (South American Region). Whereas Robusta was cultivated extensively by India, Uganda and Ecuador. 
+# Acknowledgements
 
-- The mean altitude of Arabica coffee beans production areas is higher than that of many Robusta coffee Beans production areas even though there are some exceptions.
+This report was written using R[@R]. The following R packages were used to produce this report:`tidyverse`[@tidyverse], `readr`[@readr], `kableExtra`[@kableExtra], `bookdown`[@bookdown], `maps`[@maps], `knitr`[@knitr], `dplyr`[@dplyr], `hrbrthemes`[@hrbrthemes], `viridis`[@viridis], `plotly`[@plotly], `leaflet`[@leaflet] and `ggridges`[@ggridges].
 
-- Acidity, aftertaste, aroma and flavor aspects, of Robusta coffee beans is higher than that of Arabica coffee beans, which means Robusta coffee beans have a better performance than Arabica coffee beans. 
-
-- Ratings for Semi-washed/Semi-pulped and Pulped natural honey is better when compared to Washed/Wet processing method. 
-
-- 2012 has been the best year in terms of harvesting the coffee beans. 
+The origin data used for analysis comes from [this github website](https://github.com/rfordatascience/tidytuesday/tree/master/data/2020/2020-07-07).
 
 # References
 Costa, B. (2020, July 24). Coffee Processing: Understanding Pulped Natural Coffee. Perfect Daily Grind. https://perfectdailygrind.com/2016/06/coffee-processing-understanding-pulped-natural-coffee/. 

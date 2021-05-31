@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2021 Yiwen Liu
+Copyright (c) 2021 ETC5513-Team 11 (Yiwen Liu, Sahinya Akila, Panagiotis Stylianos)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

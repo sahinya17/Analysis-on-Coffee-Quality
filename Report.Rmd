@@ -43,7 +43,7 @@ coffee_data <- read_csv(here::here("Data/coffee_ratings.csv"))
 
 All through our lives, there definitely has been a coffee lover we know or we will be coffee lovers ourselves. Coffee has helped a lot of us to stay awake to complete our assignments or any other important tasks. It has also worked adversely for many of us, where we drink coffee at very late hours and find it difficult to fall asleep. Coffee was first exported from Ethiopia to Yemen in the late 15th Century @wikipedia_2021. This analysis will help in understanding the nature of the different coffee beans (Arabica and Robusta), the regions where it is grown, the ratings for the different types of coffee beans and also the processing methods. 
 
-# Section 1 
+# Analysis by Panagiotis Stylianos
 
 ## How many bags of coffee from each country were sampled? 
 
@@ -154,9 +154,9 @@ ggplot(coffee_data %>% filter(total_cup_points > 50), aes(x = total_cup_points, 
 From Figure \@ref(fig:rating) we notice that the distribution of Ethiopian coffee rating is highly skewed to the right indicating that the coffee quality is excellent.
 
 
-# Section 2
+# Analysis by Yiwen Liu
 
-In Section 2, I want to analyze some interesting content about Arabica coffee beans and Robusta coffee beans.
+In this section, I want to analyze some interesting content about Arabica coffee beans and Robusta coffee beans.
 
 ```{r out.width = "30%", fig.width=5, fig.height=5, echo = FALSE, message = FALSE, warning = FALSE}
 knitr::include_graphics(here::here("image/coffee-bean.jpg"))
@@ -261,7 +261,7 @@ species_grades %>%
 ```
 
 
-# Section 3
+# Analysis by Sahinya Akila
 
 ## Which processing method leads to better rating
 

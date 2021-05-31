@@ -41,7 +41,9 @@ coffee_data <- read_csv(here::here("Data/coffee_ratings.csv"))
 
 # Introduction 
 
-# Section 1
+All through our lives, there definitely has been a coffee lover we know or we will be coffee lovers ourselves. Coffee has helped a lot of us to stay awake to complete our assignments or any other important tasks. It has also worked adversely for many of us, where we drink coffee at very late hours and find it difficult to fall asleep. Coffee was first exported from Ethiopia to Yemen in the late 15th Century @wikipedia_2021. This analysis will help in understanding the nature of the different coffee beans (Arabica and Robusta), the regions where it is grown, the ratings for the different types of coffee beans and also the processing methods. 
+
+# Section 1 
 
 ## How many bags of coffee from each country were sampled? 
 
@@ -152,9 +154,9 @@ ggplot(coffee_data %>% filter(total_cup_points > 50), aes(x = total_cup_points, 
 From Figure \@ref(fig:rating) we notice that the distribution of Ethiopian coffee rating is highly skewed to the right indicating that the coffee quality is excellent.
 
 
-# Section 2 {#refsection1}
+# Section 2
 
-In Section \@ref(refsection1) I want to analyze some interesting content about Arabica coffee beans and Robusta coffee beans.
+In Section 2, I want to analyze some interesting content about Arabica coffee beans and Robusta coffee beans.
 
 ```{r out.width = "30%", fig.width=5, fig.height=5, echo = FALSE, message = FALSE, warning = FALSE}
 knitr::include_graphics(here::here("image/coffee-bean.jpg"))
@@ -284,7 +286,7 @@ graph <- ggplot(processing_method, aes(x=processing_method, y=mean, fill=process
 ggplotly(graph)
 ```
 
-In Figure \@ref(fig:expiration-date) the ratings for Semi-washed/Semi-pulped and Pulped natural honey is better, as the average rating does not go below 8 for them. Pulped Natural honey process allows the coffee beans to be dried after removing the skin of the fruit when all the is still in the beans.It’s essentially a middle ground between the dry and wet processing methods. During the natural (or dry) method, the beans are dried entirely in their natural form, while the washed (or wet) process sees all of the soft fruit residue, both skin and pulp, removed before the coffee is dried (Costa, 2020). This can also be deduced from the graph above where the ratings for the Washed/Wet processing method has the least rating and suggests that it is not one of the best processing methods. 
+In Figure \@ref(fig:expiration-date) the ratings for Semi-washed/Semi-pulped and Pulped natural honey is better, as the average rating does not go below 8 for them. Pulped Natural honey process allows the coffee beans to be dried after removing the skin of the fruit when all the is still in the beans.It’s essentially a middle ground between the dry and wet processing methods. During the natural (or dry) method, the beans are dried entirely in their natural form, while the washed (or wet) process sees all of the soft fruit residue, both skin and pulp, removed before the coffee is dried @costa_2020. This can also be deduced from the graph above where the ratings for the Washed/Wet processing method has the least rating and suggests that it is not one of the best processing methods. 
 
 ## Which harvest year produced the best coffee?
 
@@ -306,7 +308,7 @@ ggplot(best_coffee, aes(harvest_year, mean)) +
   
 ```
 
-It can be observed from  Figure \@ref(fig:harvest-year) that the data available is for the years 2010 - 2018. Among this, 2012 has the best ratings for the harvest. 2018 had the least ratings. This is due to the favorable weather conditions in almost all the countries that produce coffee (Huong & Quan, 2012). 
+It can be observed from  Figure \@ref(fig:harvest-year) that the data available is for the years 2010 - 2018. Among this, 2012 has the best ratings for the harvest. 2018 had the least ratings. This is due to the favorable weather conditions in almost all the countries that produce coffee @robinson_2012. 
 
 ```{r harvesttable}
 table <- best_coffee %>% group_by(harvest_year) %>% summarise(count = n()) %>% arrange(desc(count))
@@ -331,6 +333,3 @@ This report was written using R[@R]. The following R packages were used to produ
 The origin data used for analysis comes from [this github website](https://github.com/rfordatascience/tidytuesday/tree/master/data/2020/2020-07-07).
 
 # References
-Costa, B. (2020, July 24). Coffee Processing: Understanding Pulped Natural Coffee. Perfect Daily Grind. https://perfectdailygrind.com/2016/06/coffee-processing-understanding-pulped-natural-coffee/. 
-
-Huong, T., Quan, Q. (2012, May 24). 2012 Coffee Annual. Published by Global Agriculture Information Network. 

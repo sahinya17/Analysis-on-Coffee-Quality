@@ -1,0 +1,355 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2580
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 HelveticaNeue;\f1\fnil\fcharset0 NotoSansJP-Regular;\f2\fnil\fcharset0 OpenSans-Bold;
+}
+{\colortbl;\red255\green255\blue255;\red38\green38\blue38;\red11\green88\blue158;\red14\green105\blue167;
+\red41\green101\blue168;\red100\green100\blue100;\red213\green213\blue213;\red109\green109\blue109;}
+{\*\expandedcolortbl;;\cssrgb\c20000\c20000\c20000;\cssrgb\c0\c42745\c68235;\cssrgb\c784\c49412\c71373;
+\cssrgb\c20000\c47843\c71765;\cssrgb\c46667\c46667\c46667;\cssrgb\c86667\c86667\c86667;\cssrgb\c50196\c50196\c50196;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
+{\info
+{\title Analysing Coffee}
+{\author Yiwen Liu, Panagiotis Stylianos, Sahinya Akila}}\paperw12240\paperh15840\vieww28300\viewh17700\viewkind0
+\deftab720
+\pard\pardeftab720\sl400\partightenfactor0
+
+\f0\fs28 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 \
+\pard\pardeftab720\sl400\partightenfactor0
+
+\f1 \cf2 {{\NeXTGraphic unknown.png \width41940 \height2700 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\pardeftab720\sl400\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl836\sa200\partightenfactor0
+
+\f2\b\fs76 \cf3 \strokec3 Analysing Coffee\
+\pard\pardeftab720\sl528\sa200\partightenfactor0
+
+\fs48 \cf4 \strokec4 ETC5513 Assignment 4, Master of Business Analytics\
+\pard\pardeftab720\sl396\sa200\partightenfactor0
+
+\fs36 \cf4 Yiwen Liu, Panagiotis Stylianos, Sahinya Akila
+\f1\b0\fs28 \cf2 \strokec2 \
+
+\f2\b\fs36 \cf4 \strokec4 2021-05-29\
+\pard\pardeftab720\sl400\partightenfactor0
+
+\f1\b0\fs28 \cf2 \strokec2 \
+\pard\pardeftab720\sl748\sa200\partightenfactor0
+
+\fs68 \cf3 \strokec3 1
+\f2\b  Introduction\
+\pard\pardeftab720\sl400\sa200\partightenfactor0
+
+\f1\b0\fs28 \cf2 \strokec2 All through our lives, there definitely has been a coffee lover we know or we will be coffee lovers ourselves. Coffee has helped a lot of us to stay awake to complete our assignments or any other important tasks. It has also worked adversely for many of us, where we drink coffee at very late hours and find it difficult to fall asleep. Coffee was first exported from Ethiopia to Yemen in the late 15th Century \'93History of Coffee\'94 (2021). This analysis will help in understanding the nature of the different coffee beans (Arabica and Robusta), the regions where it is grown, the ratings for the different types of coffee beans and also the processing methods.\
+\pard\pardeftab720\sl748\sa200\partightenfactor0
+
+\fs68 \cf3 \strokec3 2
+\f2\b  Section 1\
+\pard\pardeftab720\sl660\sa200\partightenfactor0
+
+\f1\b0\fs60 \cf4 \strokec4 2.1
+\f2\b  How many bags of coffee from each country were sampled?\
+\pard\pardeftab720\sl400\sa200\partightenfactor0
+
+\f1\b0\fs28 \cf2 \strokec2 We begin our analysis by providing a summary of the samples used to provide the coffee ratings. For each country different varieties of coffee were sampled from different regions and companies. The samples from each country can be summarised using the number_of_bags variable. It is important to know the total quantity for each country to possibly identify a relationship between the number of samples used and the countries rating.\
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\sa200\partightenfactor0
+\cf2 The below table summarises the total bags counted for each country.\
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\sa200\partightenfactor0
+\cf2 We observe that more than 40000 samples of Colombian coffee were used for grading.\
+\pard\pardeftab720\sl400\qc\partightenfactor0
+\cf2 {{\NeXTGraphic 1__#$!@%!#__unknown.png \width38400 \height26880 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\pardeftab720\sl400\qc\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\sa200\qc\partightenfactor0
+\cf2 Figure 2.1: Scatterplot of average coffee rating and number of testing samples \
+\pard\pardeftab720\sl400\sa200\partightenfactor0
+\cf2 Figure \cf5 \strokec5 2.1\cf2 \strokec2  indicates that there is not an apparent association between the average coffee rating and the number of testing samples.\
+\pard\pardeftab720\sl660\sa200\partightenfactor0
+
+\fs60 \cf4 \strokec4 2.2
+\f2\b  Which country produces the highest rated coffee?\
+\pard\pardeftab720\sl400\sa200\partightenfactor0
+
+\f1\b0\fs28 \cf2 \strokec2 After we identified that the number of testing samples doesn\'92t influence the coffee rating, we can answer which countries produce the best quality of coffee.\
+\pard\pardeftab720\sl400\qc\partightenfactor0
+\cf2 {{\NeXTGraphic 2__#$!@%!#__unknown.png \width38400 \height26880 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\
+\pard\pardeftab720\sl400\sa200\qc\partightenfactor0
+\cf2 Figure 2.2: Coffee Rating Distribution by Country \
+\pard\pardeftab720\sl400\sa200\partightenfactor0
+\cf2 From Figure \cf5 \strokec5 2.2\cf2 \strokec2  we notice that the distribution of Ethiopian coffee rating is highly skewed to the right indicating that the coffee quality is excellent.\
+\pard\pardeftab720\sl748\sa200\partightenfactor0
+
+\fs68 \cf3 \strokec3 3
+\f2\b  Section 2\
+\pard\pardeftab720\sl400\sa200\partightenfactor0
+
+\f1\b0\fs28 \cf2 \strokec2 In Section \cf5 \strokec5 3\cf2 \strokec2  I want to analyze some interesting content about Arabica coffee beans and Robusta coffee beans.\
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2 {{\NeXTGraphic unknown.jpg \width14600 \height6800 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\
+\pard\pardeftab720\sl660\sa200\partightenfactor0
+
+\fs60 \cf4 \strokec4 3.1
+\f2\b  Which top3 countries cultivated most kinds of Arabica coffee beans and Robusta coffee beans respectively?\
+\pard\pardeftab720\sl400\sa200\partightenfactor0
+
+\f1\b0\fs28 \cf2 \strokec2 The Table \cf5 \strokec5 3.1\cf2 \strokec2  shows that Mexico, Colombia and Guatemala cultivated the most kinds of Arabica coffee beans and India, Uganda and Ecuador cultivated the most kinds of Robusta coffee beans. Also it could find that there are much more types of Arabica coffee beans compared to Robusta coffee beans, which conforms to the content given by Bunn et al. (2015).\
+\pard\pardeftab720\sl400\partightenfactor0
+\cf6 \strokec6 Table 3.1: The top3 countries which cultivated most kinds of Arabica coffee beans and Robusta coffee beans respectively \
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \tamarb400 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalb \clshdrawnil \clwWidth8320\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrs\brdrw40\brdrcf7 \clbrdrr\brdrnil \clpadt160 \clpadl160 \clpadb160 \clpadr160 \gaph\cellx2880
+\clvertalb \clshdrawnil \clwWidth4330\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrs\brdrw40\brdrcf7 \clbrdrr\brdrnil \clpadt160 \clpadl160 \clpadb160 \clpadr160 \gaph\cellx5760
+\clvertalb \clshdrawnil \clwWidth2450\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrs\brdrw40\brdrcf7 \clbrdrr\brdrnil \clpadt160 \clpadl160 \clpadb160 \clpadr160 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sl400\partightenfactor0
+\cf2 \strokec2 country_of_origin \cell 
+\pard\intbl\itap1\pardeftab720\sl400\partightenfactor0
+\cf2 species \cell 
+\pard\intbl\itap1\pardeftab720\sl400\qr\partightenfactor0
+\cf2 n \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \tamarb400 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth8320\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf7 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt160 \clpadl160 \clpadb160 \clpadr160 \gaph\cellx2880
+\clvertalt \clshdrawnil \clwWidth4330\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf7 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt160 \clpadl160 \clpadb160 \clpadr160 \gaph\cellx5760
+\clvertalt \clshdrawnil \clwWidth2450\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf7 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt160 \clpadl160 \clpadb160 \clpadr160 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sl400\partightenfactor0
+\cf2 Mexico \cell 
+\pard\intbl\itap1\pardeftab720\sl400\partightenfactor0
+\cf2 Arabica \cell 
+\pard\intbl\itap1\pardeftab720\sl400\qr\partightenfactor0
+\cf2 236 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \tamarb400 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth8320\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf7 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt160 \clpadl160 \clpadb160 \clpadr160 \gaph\cellx2880
+\clvertalt \clshdrawnil \clwWidth4330\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf7 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt160 \clpadl160 \clpadb160 \clpadr160 \gaph\cellx5760
+\clvertalt \clshdrawnil \clwWidth2450\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf7 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt160 \clpadl160 \clpadb160 \clpadr160 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sl400\partightenfactor0
+\cf2 Colombia \cell 
+\pard\intbl\itap1\pardeftab720\sl400\partightenfactor0
+\cf2 Arabica \cell 
+\pard\intbl\itap1\pardeftab720\sl400\qr\partightenfactor0
+\cf2 183 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \tamarb400 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth8320\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf7 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt160 \clpadl160 \clpadb160 \clpadr160 \gaph\cellx2880
+\clvertalt \clshdrawnil \clwWidth4330\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf7 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt160 \clpadl160 \clpadb160 \clpadr160 \gaph\cellx5760
+\clvertalt \clshdrawnil \clwWidth2450\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf7 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt160 \clpadl160 \clpadb160 \clpadr160 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sl400\partightenfactor0
+\cf2 Guatemala \cell 
+\pard\intbl\itap1\pardeftab720\sl400\partightenfactor0
+\cf2 Arabica \cell 
+\pard\intbl\itap1\pardeftab720\sl400\qr\partightenfactor0
+\cf2 181 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \tamarb400 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth8320\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf7 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt160 \clpadl160 \clpadb160 \clpadr160 \gaph\cellx2880
+\clvertalt \clshdrawnil \clwWidth4330\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf7 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt160 \clpadl160 \clpadb160 \clpadr160 \gaph\cellx5760
+\clvertalt \clshdrawnil \clwWidth2450\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf7 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt160 \clpadl160 \clpadb160 \clpadr160 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sl400\partightenfactor0
+\cf2 India \cell 
+\pard\intbl\itap1\pardeftab720\sl400\partightenfactor0
+\cf2 Robusta \cell 
+\pard\intbl\itap1\pardeftab720\sl400\qr\partightenfactor0
+\cf2 13 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \tamarb400 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth8320\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf7 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt160 \clpadl160 \clpadb160 \clpadr160 \gaph\cellx2880
+\clvertalt \clshdrawnil \clwWidth4330\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf7 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt160 \clpadl160 \clpadb160 \clpadr160 \gaph\cellx5760
+\clvertalt \clshdrawnil \clwWidth2450\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf7 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt160 \clpadl160 \clpadb160 \clpadr160 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sl400\partightenfactor0
+\cf2 Uganda \cell 
+\pard\intbl\itap1\pardeftab720\sl400\partightenfactor0
+\cf2 Robusta \cell 
+\pard\intbl\itap1\pardeftab720\sl400\qr\partightenfactor0
+\cf2 10 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \tamarb400 \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth8320\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf7 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt160 \clpadl160 \clpadb160 \clpadr160 \gaph\cellx2880
+\clvertalt \clshdrawnil \clwWidth4330\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf7 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt160 \clpadl160 \clpadb160 \clpadr160 \gaph\cellx5760
+\clvertalt \clshdrawnil \clwWidth2450\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf7 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt160 \clpadl160 \clpadb160 \clpadr160 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sl400\partightenfactor0
+\cf2 Ecuador \cell 
+\pard\intbl\itap1\pardeftab720\sl400\partightenfactor0
+\cf2 Robusta \cell 
+\pard\intbl\itap1\pardeftab720\sl400\qr\partightenfactor0
+\cf2 2 \cell \lastrow\row
+\pard\pardeftab720\sl400\sa200\partightenfactor0
+\cf2 Now, the Figure \cf5 \strokec5 3.1\cf2 \strokec2  shows the geographical location of this 6 countries. It could easily find that it seems to be an obvious coffee production zone, which is between the equator and 30 degrees north latitude. In these zones, the annual average temperature and rainfall are in line with the coffee bean growing conditions.\
+Besides, it indicates that the countries that cultivated Arabica coffee beans are all located in Central and South America, while the countries that cultivated Robusta coffee beans are located in several continents like South America, Eastern Africa and India. It is related to the environment required for the growth of different coffee beans.\
+\pard\pardeftab720\sl400\qc\partightenfactor0
+\cf2 {{\NeXTGraphic 3__#$!@%!#__unknown.png \width38400 \height26880 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\
+\pard\pardeftab720\sl400\sa200\qc\partightenfactor0
+\cf2 Figure 3.1: The geographical location of the top3 countries which cultivated most kinds of Arabica coffee beans and Robusta coffee beans respectively \
+\pard\pardeftab720\sl660\sa200\partightenfactor0
+
+\fs60 \cf4 \strokec4 3.2
+\f2\b  What is the difference of altitude of Arabica coffee beans and Robusta coffee beans production areas?\
+\pard\pardeftab720\sl400\sa200\partightenfactor0
+
+\f1\b0\fs28 \cf2 \strokec2 Figure \cf5 \strokec5 3.2\cf2 \strokec2  indicates that the mean altitude of Arabica coffee beans production areas is concentrated from 1000 to 1800 meters. Besides, people could surprisingly find that there exists two peaks about the mean altitude of Robusta coffee Beans production areas, and the ranges are concentrated from 500 to 1600 meters and 2800 to 3400 meters respectively. However, the probability of the second peak is much less than the first one.\
+So it could say that the mean altitude of Arabica coffee beans production areas is higher than that of many Robusta coffee Beans production areas even though there are some exceptions.\
+\pard\pardeftab720\sl400\qc\partightenfactor0
+\cf2 {{\NeXTGraphic 4__#$!@%!#__unknown.png \width38400 \height26880 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\
+\pard\pardeftab720\sl400\sa200\qc\partightenfactor0
+\cf2 Figure 3.2: The mean altitude of Arabica coffee beans and Robusta coffee beans production areas \
+\pard\pardeftab720\sl660\sa200\partightenfactor0
+
+\fs60 \cf4 \strokec4 3.3
+\f2\b  In which species Arabica coffee beans or Robusta coffee beans has higher grades?\
+\pard\pardeftab720\sl400\sa200\partightenfactor0
+
+\f1\b0\fs28 \cf2 \strokec2 Figure \cf5 \strokec5 3.3\cf2 \strokec2  shows the scores of several primary different aspects of Arabica coffee beans and Robusta coffee beans and their total points. It is obvious that in acidity, aftertaste, aroma and flavor aspects, the median score of Robusta coffee beans is higher than that of Arabica coffee beans, which means Robusta coffee beans have a better performance than Arabica coffee beans. As to sweetness, Arabica coffee beans is much better than Robusta coffee beans. In the end, total point, which combines these primary aspects and some other aspects, shows that Arabica coffee beans has a better quality. Maybe these grades would give some help when people choose coffee beans.\
+\pard\pardeftab720\sl400\qc\partightenfactor0
+\cf2 {{\NeXTGraphic 5__#$!@%!#__unknown.png \width38400 \height26880 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\
+\pard\pardeftab720\sl400\sa200\qc\partightenfactor0
+\cf2 Figure 3.3: Scores of several different aspects of Arabica coffee beans and Robusta coffee beans and their total points \
+\pard\pardeftab720\sl748\sa200\partightenfactor0
+
+\fs68 \cf3 \strokec3 4
+\f2\b  Section 3\
+\pard\pardeftab720\sl660\sa200\partightenfactor0
+
+\f1\b0\fs60 \cf4 \strokec4 4.1
+\f2\b  Which processing method leads to better rating
+\f1\b0\fs28 \cf2 \strokec2 \
+\pard\pardeftab720\sl400\sa200\qc\partightenfactor0
+\cf2 Figure 4.1: Distribution of Coffee Ratings based on Processing method \
+\pard\pardeftab720\sl400\sa200\partightenfactor0
+\cf2 In Figure \cf5 \strokec5 4.1\cf2 \strokec2  the ratings for Semi-washed/Semi-pulped and Pulped natural honey is better, as the average rating does not go below 8 for them. Pulped Natural honey process allows the coffee beans to be dried after removing the skin of the fruit when all the is still in the beans.It\'92s essentially a middle ground between the dry and wet processing methods. During the natural (or dry) method, the beans are dried entirely in their natural form, while the washed (or wet) process sees all of the soft fruit residue, both skin and pulp, removed before the coffee is dried Costa (2020). This can also be deduced from the graph above where the ratings for the Washed/Wet processing method has the least rating and suggests that it is not one of the best processing methods.\
+\pard\pardeftab720\sl660\sa200\partightenfactor0
+
+\fs60 \cf4 \strokec4 4.2
+\f2\b  Which harvest year produced the best coffee?\
+\pard\pardeftab720\sl400\qc\partightenfactor0
+
+\f1\b0\fs28 \cf2 \strokec2 {{\NeXTGraphic 6__#$!@%!#__unknown.png \width38400 \height26880 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\
+\pard\pardeftab720\sl400\sa200\qc\partightenfactor0
+\cf2 Figure 4.2: Coffee Ratings in each harvest year \
+\pard\pardeftab720\sl400\sa200\partightenfactor0
+\cf2 It can be observed from Figure \cf5 \strokec5 4.2\cf2 \strokec2  that the data available is for the years 2010 - 2018. Among this, 2012 has the best ratings for the harvest. 2018 had the least ratings. This is due to the favorable weather conditions in almost all the countries that produce coffee Robinson (2012).\
+\pard\pardeftab720\sl400\partightenfactor0
+\cf6 \strokec6 Table 4.1: Number of records for each year \
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \tamarb400 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalb \clshdrawnil \clwWidth9853\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrs\brdrw40\brdrcf7 \clbrdrr\brdrnil \clpadt160 \clpadl160 \clpadb160 \clpadr160 \gaph\cellx4320
+\clvertalb \clshdrawnil \clwWidth5246\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrs\brdrw40\brdrcf7 \clbrdrr\brdrnil \clpadt160 \clpadl160 \clpadb160 \clpadr160 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sl400\partightenfactor0
+\cf2 \strokec2 harvest_year \cell 
+\pard\intbl\itap1\pardeftab720\sl400\qr\partightenfactor0
+\cf2 count \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \tamarb400 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth9853\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf7 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt160 \clpadl160 \clpadb160 \clpadr160 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth5246\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf7 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt160 \clpadl160 \clpadb160 \clpadr160 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sl400\partightenfactor0
+\cf2 2012 \cell 
+\pard\intbl\itap1\pardeftab720\sl400\qr\partightenfactor0
+\cf2 354 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \tamarb400 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth9853\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf7 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt160 \clpadl160 \clpadb160 \clpadr160 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth5246\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf7 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt160 \clpadl160 \clpadb160 \clpadr160 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sl400\partightenfactor0
+\cf2 2014 \cell 
+\pard\intbl\itap1\pardeftab720\sl400\qr\partightenfactor0
+\cf2 233 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \tamarb400 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth9853\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf7 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt160 \clpadl160 \clpadb160 \clpadr160 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth5246\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf7 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt160 \clpadl160 \clpadb160 \clpadr160 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sl400\partightenfactor0
+\cf2 2013 \cell 
+\pard\intbl\itap1\pardeftab720\sl400\qr\partightenfactor0
+\cf2 181 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \tamarb400 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth9853\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf7 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt160 \clpadl160 \clpadb160 \clpadr160 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth5246\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf7 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt160 \clpadl160 \clpadb160 \clpadr160 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sl400\partightenfactor0
+\cf2 2015 \cell 
+\pard\intbl\itap1\pardeftab720\sl400\qr\partightenfactor0
+\cf2 129 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \tamarb400 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth9853\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf7 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt160 \clpadl160 \clpadb160 \clpadr160 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth5246\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf7 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt160 \clpadl160 \clpadb160 \clpadr160 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sl400\partightenfactor0
+\cf2 2016 \cell 
+\pard\intbl\itap1\pardeftab720\sl400\qr\partightenfactor0
+\cf2 124 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \tamarb400 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth9853\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf7 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt160 \clpadl160 \clpadb160 \clpadr160 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth5246\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf7 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt160 \clpadl160 \clpadb160 \clpadr160 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sl400\partightenfactor0
+\cf2 2017 \cell 
+\pard\intbl\itap1\pardeftab720\sl400\qr\partightenfactor0
+\cf2 70 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \tamarb400 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth9853\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf7 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt160 \clpadl160 \clpadb160 \clpadr160 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth5246\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf7 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt160 \clpadl160 \clpadb160 \clpadr160 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sl400\partightenfactor0
+\cf2 2011 \cell 
+\pard\intbl\itap1\pardeftab720\sl400\qr\partightenfactor0
+\cf2 26 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \tamarb400 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth9853\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf7 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt160 \clpadl160 \clpadb160 \clpadr160 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth5246\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf7 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt160 \clpadl160 \clpadb160 \clpadr160 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sl400\partightenfactor0
+\cf2 2010 \cell 
+\pard\intbl\itap1\pardeftab720\sl400\qr\partightenfactor0
+\cf2 10 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \tamarb400 \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth9853\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf7 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt160 \clpadl160 \clpadb160 \clpadr160 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth5246\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf7 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt160 \clpadl160 \clpadb160 \clpadr160 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sl400\partightenfactor0
+\cf2 2018 \cell 
+\pard\intbl\itap1\pardeftab720\sl400\qr\partightenfactor0
+\cf2 1 \cell \lastrow\row
+\pard\pardeftab720\sl400\sa200\partightenfactor0
+\cf2 As it can be seen in Table \cf5 \strokec5 4.1\cf2 \strokec2 , there is only one record for 2018. Which implies that there is some missing data in the data set.\
+\pard\pardeftab720\sl748\sa200\partightenfactor0
+
+\fs68 \cf3 \strokec3 5
+\f2\b  Conclusion\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl400\sa200\partightenfactor0
+\ls1\ilvl0
+\f1\b0\fs28 \cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 The highest number of samples were 41204 bag samples from Colombia and the least was 1 bag sample from Mauritius.\uc0\u8232 \
+\ls1\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 No relationship between the number of test samples and average coffee rating.\uc0\u8232 \
+\ls1\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 The rating for Ethiopian Coffee is the highest.\uc0\u8232 \
+\ls1\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Arabica coffee beans were cultivated mostly by Mexico, Colombia and Guatemala (South American Region). Whereas Robusta was cultivated extensively by India, Uganda and Ecuador.\uc0\u8232 \
+\ls1\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 The mean altitude of Arabica coffee beans production areas is higher than that of many Robusta coffee Beans production areas even though there are some exceptions.\uc0\u8232 \
+\ls1\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Acidity, aftertaste, aroma and flavor aspects, of Robusta coffee beans is higher than that of Arabica coffee beans, which means Robusta coffee beans have a better performance than Arabica coffee beans.\uc0\u8232 \
+\ls1\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Ratings for Semi-washed/Semi-pulped and Pulped natural honey is better when compared to Washed/Wet processing method.\uc0\u8232 \
+\ls1\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 2012 has been the best year in terms of harvesting the coffee beans.\uc0\u8232 \
+\pard\pardeftab720\sl748\sa200\partightenfactor0
+
+\f2\b\fs68 \cf3 \strokec3 References\
+\pard\pardeftab720\sl400\partightenfactor0
+
+\f1\b0\fs28 \cf2 \strokec2 Bunn, Christian, Peter L\'e4derach, Oriana Ovalle Rivera, and Dieter Kirschke. 2015. \'93A Bitter Cup: Climate Change Profile of Global Production of Arabica and Robusta Coffee.\'94 Climatic Change 129 (1): 89\'96101. \
+Costa, Bruna. 2020. \'93Coffee Processing: Understanding Pulped Natural Coffee.\'94 Perfect Daily Grind. Perfect Daily Grind. {\field{\*\fldinst{HYPERLINK "https://perfectdailygrind.com/2016/06/coffee-processing-understanding-pulped-natural-coffee/"}}{\fldrslt \cf5 \strokec5 https://perfectdailygrind.com/2016/06/coffee-processing-understanding-pulped-natural-coffee/}}. \
+\'93History of Coffee.\'94 2021. Wikipedia. Wikimedia Foundation. {\field{\*\fldinst{HYPERLINK "https://en.wikipedia.org/wiki/History_of_coffee"}}{\fldrslt \cf5 \strokec5 https://en.wikipedia.org/wiki/History_of_coffee}}. \
+Robinson, V. 2012. \'93Global Agriculture Environment.\'94 CFW Plexus, no. AACCI 2012 Annual Meeting. {\field{\*\fldinst{HYPERLINK "https://doi.org/10.1094/cplex-2012-1118-01w"}}{\fldrslt \cf5 \strokec5 https://doi.org/10.1094/cplex-2012-1118-01w}}. \
+}

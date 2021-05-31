@@ -41,8 +41,9 @@ All through our lives, there definitely has been a coffee lover we know or we wi
 2. Which country produces the highest rated coffee?
 3. Which top3 countries cultivated most kinds of Arabica coffee beans and Robusta coffee beans respectively?
 4. What is the difference of altitude of Arabica coffee beans and Robusta coffee beans production areas?
-5. Which processing method leads to better rating
-6. Which harvest year produced the best coffee?
+5. In which species Arabica coffee beans or Robusta coffee beans has higher grades?
+6. Which processing method leads to better rating
+7. Which harvest year produced the best coffee?
 
 ## Contributing
 
@@ -60,5 +61,5 @@ See `LICENSE` for more information.
 ## Contact
 
 1. Sahinya Akila (saki0001@student.monash.edu)
-2. Yiwen Liu ()
-3. Panagiotis Stylianos ()
+2. Yiwen Liu (yliu0320@student.monash.edu)
+3. Panagiotis Stylianos (psty0001@student.monash.edu)
